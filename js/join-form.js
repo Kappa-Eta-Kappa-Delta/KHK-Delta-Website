@@ -64,6 +64,7 @@
                                 '<div class="text-center">' +
                                     '<button class="btn btn-primary btn-lg" type="submit">Sign Up</button>' +
                                 "</div>" +
+                                '<div id="joinFormStatus" class="join-form-status text-center fade" aria-live="polite"></div>' +
                                 '<p class="text-muted text-center small mt-3">We\'ll only use this to reach out about joining KHK.</p>' +
                             "</form>" +
                         "</div>" +
@@ -73,32 +74,51 @@
         );
     }
 
+    // Shows a message under the submit button and auto-fades it after a
+    // few seconds — same fade technique window.showNotification() uses
+    // (js/main.js), just scoped to this form instead of a page-top toast.
+    function setStatus(statusEl, type, message) {
+        statusEl.textContent = message;
+        statusEl.className = "join-form-status text-center fade show " +
+            (type === "success" ? "text-success" : "text-danger");
+
+        clearTimeout(statusEl._fadeTimer);
+        statusEl._fadeTimer = setTimeout(function () {
+            statusEl.classList.remove("show");
+            setTimeout(function () { statusEl.textContent = ""; }, 150);
+        }, 4000);
+    }
+
     function handleSubmit(event) {
         event.preventDefault();
         const form = event.target;
+        const statusEl = document.getElementById("joinFormStatus");
         const name = form.elements.name.value.trim();
         const email = form.elements.email.value.trim();
         const semester = form.elements.semester.value;
 
         if (!name) {
-            window.showNotification("Please enter your name.", "error");
+            setStatus(statusEl, "error", "Please enter your name.");
             return;
         }
         if (!window.isValidEmail(email)) {
-            window.showNotification("Please enter a valid email address.", "error");
+            setStatus(statusEl, "error", "Please enter a valid email address.");
             return;
         }
         if (!semester) {
-            window.showNotification("Please choose a semester.", "error");
+            setStatus(statusEl, "error", "Please choose a semester.");
             return;
         }
         if (!APPS_SCRIPT_URL) {
-            window.showNotification("Sign-up isn't fully set up yet — see scripts/JOIN-FORM-SETUP.md.", "error");
+            setStatus(statusEl, "error", "Sign-up isn't fully set up yet — see scripts/JOIN-FORM-SETUP.md.");
             return;
         }
 
         const submitBtn = form.querySelector('button[type="submit"]');
+        const originalBtnHtml = submitBtn.innerHTML;
         submitBtn.disabled = true;
+        submitBtn.innerHTML =
+            '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending…';
 
         // Sent as text/plain (not application/json) so the browser doesn't
         // send a CORS preflight request first — Apps Script Web Apps don't
@@ -109,14 +129,15 @@
             body: JSON.stringify({ name: name, email: email, semester: semester })
         })
             .then(function () {
-                window.showNotification("Thanks for signing up! We'll be in touch.", "success");
+                setStatus(statusEl, "success", "Thanks for signing up! We'll be in touch.");
                 form.reset();
             })
             .catch(function () {
-                window.showNotification("Something went wrong submitting the form. Please try again.", "error");
+                setStatus(statusEl, "error", "Something went wrong submitting the form. Please try again.");
             })
             .finally(function () {
                 submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnHtml;
             });
     }
 

@@ -53,4 +53,10 @@
             cursor: not-allowed;
         }
     }
+
+    .join-form-status {
+        min-height: 1.5rem; // reserve space so the layout doesn't jump when the message appears/disappears
+        font-weight: 600;
+        margin-top: 0.75rem;
+    }
 }
