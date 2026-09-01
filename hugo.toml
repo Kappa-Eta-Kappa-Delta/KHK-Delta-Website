@@ -1,77 +1,124 @@
-baseURL = "/"
-languageCode = "en-us"
-title = "Kappa Eta Kappa"
+baseURL = 'https://delta.khk.org/'
+locale = 'en-us'
+
+# The title of the window
+title = 'Kappa Eta Kappa | Delta Chapter | UW-Madison'
+
+# This site doesn't use tags/categories — skip generating those
+# (otherwise-unused) taxonomy pages and their RSS feeds.
+disableKinds = ["taxonomy", "term"]
 
 [params]
-description = "Kappa Eta Kappa is a national, professional co-ed Electrical Engineering Fraternity founded 1923. Delta Chapter is located at the University of Wisconsin, Madison."
-twitter_username = "khkDelta"
-github_username = "kappaetakappa"
-President = "Krishnang Patra"
-Vice_President = "Katarina Bauer"
-Treasurer = "Raghav Jindal"
-Secretary = "Alex Conover"
-Publicity_Chair = "Katie Leitz"
-Pledge_Trainer = "Will Huhn"
-House_Steward = "Tanner Birenbaum"
-Social_Chair = "Ryan Young"
+  # The title shown in the navigation bar at the top of the screen
+  navtitle = 'KHK Delta Chapter'
 
-[permalinks]
-posts = "/posts/:year-:month-:day-:title/"
+  # Footer contact info / social links / quick links — the single
+  # place to edit these, used by layouts/_partials/footer.html.
+  addressLine1 = "114 N Orchard St"
+  addressLine2 = "Madison, WI 53715"
+  email = "contact@delta.khk.org"
+  phoneDisplay = "+1 (608) 251-7545"
+  phoneHref = "tel:+16082517545"
+  instagramUrl = "https://www.instagram.com/khkdelta/"
+  linkedinUrl = "https://www.linkedin.com/company/kappa-eta-kappa-delta-chapter/"
+  githubUrl = "https://github.com/Kappa-Eta-Kappa-Delta"
+  alumniUrl = "https://daa.khk.org/"
+  nationalUrl = "https://khk.org/"
+  universityUrl = "https://www.wisc.edu/"
 
-[blackfriday]
-hrefTargetBlank = true
+# Nav links — edit here, not in layouts/_partials/navbar.html.
+[[menus.main]]
+  name = "Home"
+  url = "/"
+  weight = 10
+  [menus.main.params]
+    anchor = "home"
 
-[markup.goldmark.renderer]
-unsafe = true
+[[menus.main]]
+  name = "About Us"
+  url = "/about/"
+  weight = 20
 
-[menu]
-[[menu.main]]
-name = "Home"
-pageRef = "/"
-weight = 1
-[[menu.main]]
-name = "About"
-pageRef = "/posts/"
-weight = 2
-[[menu.main]]
-name = "Events"
-pageRef = "/events/"
-weight = 3
-[[menu.main]]
-name = "Members"
-pageRef = "/members/"
-weight = 4
-[[menu.main]]
-name = "Organizations"
-identifier = "organizations"
-weight = 5
-[[menu.main]]
-name = "Delta Alumni Association"
-url = "http://daa.khk.org"
-parent = "organizations"
-weight = 1
-[[menu.main]]
-name = "National Association"
-url = "http://khk.org"
-parent = "organizations"
-weight = 2
-[[menu.main]]
-name = "National Executive Council"
-url = "http://khk.org/contact"
-parent = "organizations"
-weight = 3
-[[menu.main]]
-name = "Other Chapters"
-identifier = "other-chapters"
-parent = "organizations"
-weight = 4
-[[menu.main]]
-name = "Beta (UM - St Paul/Twin Cities)"
-url = "http://khkbeta.org"
-parent = "other-chapters"
-weight = 1
-[[menu.main]]
-name = "Iota (UM - St Cloud)"
-url = "http://iota.khk.org"
-parent = "other-chapters"
-weight = 2
+# TEMP (Temp branch): Our Home nav link disabled while that page is
+# deactivated. Uncomment to restore.
+# [[menus.main]]
+#   name = "Our Home"
+#   url = "/our-home/"
+#   weight = 30
+
+[[menus.main]]
+  name = "Rush Information"
+  url = "/rush/"
+  weight = 40
+
+# TEMP (Temp branch): Members and News nav links disabled while those
+# pages are deactivated. Uncomment to restore.
+# [[menus.main]]
+#   name = "Members"
+#   url = "/members/"
+#   weight = 50
+#
+# [[menus.main]]
+#   name = "News"
+#   url = "/posts/"
+#   weight = 60
+#   [menus.main.params]
+#     sectionmatch = "posts"
+
+# ------------------------------------------------------------------
+# Module mounts
+#
+# The legacy site (root-level *.html/css/ + the old js/*-engine.js
+# files) is fully migrated — every page now comes from content/ +
+# layouts/. What's left of js/ is genuinely-still-client-side behavior
+# (join form, moving employer-logo wall, member card flip/keyboard
+# interactions) kept as plain static files, not build output.
+#
+# Defining any explicit mount replaces ALL of Hugo's implicit default
+# mounts, so every standard directory Hugo needs is listed below too.
+# ------------------------------------------------------------------
+[module]
+  [[module.mounts]]
+    source = "content"
+    target = "content"
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
+  [[module.mounts]]
+    source = "archetypes"
+    target = "archetypes"
+  [[module.mounts]]
+    source = "i18n"
+    target = "i18n"
+  [[module.mounts]]
+    source = "data"
+    target = "data"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+
+  # assets/sass/** -> Hugo Pipes source (resources.Get "sass/main.scss" in head.html).
+  # assets/img/members/** and assets/img/members-casual/** -> also Hugo Pipes
+  # source, so member-photo.html can resources.Get + Resize them (member
+  # photos come straight off phones at up to several MB each; shipped raw
+  # they're the main cause of the multi-second image stall on /members).
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+    includeFiles = ["/sass/**", "/img/members/**", "/img/members-casual/**"]
+
+  # assets/{fonts,img,logos,svg} -> copied verbatim to /assets/... in
+  # the built output, matching the paths content/data already use.
+  # (member/members-casual photos excluded: those are resized via the
+  # Pipes mount above instead, so the multi-MB originals aren't also
+  # shipped raw to /assets/img/...)
+  [[module.mounts]]
+    source = "assets"
+    target = "static/assets"
+    excludeFiles = ["/sass/**", "/img/members/**", "/img/members-casual/**"]
+
+  # Remaining plain-JS behavior (join form, moving wall, card flip
+  # interactions) -> served at /js/... unchanged.
+  [[module.mounts]]
+    source = "js"
+    target = "static/js"

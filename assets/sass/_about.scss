@@ -1,0 +1,448 @@
+// ==========================================
+// ABOUT PAGE STYLES — ported from css/about.css
+// ==========================================
+
+.about-hero-section {
+    position: relative;
+    min-height: 24rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('/assets/img/spring_2026_pledge_class.jpg');
+    background-size: cover;
+    background-position: center;
+
+    @media (max-width: 767.98px) {
+        min-height: 16rem;
+    }
+}
+
+.about-hero-overlay {
+    background: rgba(0, 0, 0, 0.55);
+    padding: 1.75rem 3.5rem;
+    border-radius: 0.75rem;
+    text-align: center;
+
+    h1 {
+        color: #fff;
+        letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 767.98px) {
+        padding: 1.25rem 2rem;
+    }
+}
+
+// ---------- Hero (image-only banner) + intro, overlay variant ----------
+
+.about-hero-image-section {
+    min-height: 22rem;
+    background-image: url('/assets/img/KHK_Culvers_Photo.jpeg');
+    background-size: cover;
+    background-position: center;
+
+    @media (max-width: 767.98px) {
+        min-height: 14rem;
+    }
+}
+
+.about-intro-section {
+    background: var(--surface-bg-strong);
+
+    h1 {
+        color: #fff;
+        letter-spacing: 0.5px;
+    }
+
+    p {
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.8;
+        font-size: 1.05rem;
+        max-width: 50rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.vision-mission-overlay-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/img/Expo_Team_Magazine_Pic.jpeg');
+}
+
+// ---------- Shared section heading ----------
+
+.section-heading h2 {
+    color: var(--primary-color);
+
+    @media (prefers-color-scheme: dark) {
+        color: var(--text-primary);
+    }
+}
+
+.about-section-lead {
+    color: var(--text-secondary);
+    max-width: 62rem;
+}
+
+// ---------- Vision / Mission / Our Home (image + text rows) ----------
+
+.vision-section,
+.mission-section,
+.our-home-section {
+    img {
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+
+    h2 {
+        color: var(--primary-color);
+        font-weight: 800;
+
+        @media (prefers-color-scheme: dark) {
+            color: var(--text-primary);
+        }
+    }
+
+    p {
+        color: var(--text-secondary);
+        line-height: 1.8;
+        font-size: 1.05rem;
+    }
+
+    @media (max-width: 991.98px) {
+        .ps-lg-5 {
+            padding-left: 0 !important;
+        }
+    }
+}
+
+// "Our History" sits between "Our Values" and "Our Home" (layouts/_default/about.html),
+// both of which are --surface-bg-alt via .bg-light — giving this one its own background
+// keeps it from being the same color as either of its neighbors.
+.history-section {
+    background: var(--surface-bg);
+}
+
+// ---------- Vision / Mission — background overlay variant ----------
+
+.overlay-feature-section {
+    position: relative;
+    min-height: 26rem;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    padding: 3rem 0;
+
+    h2 {
+        color: #fff;
+        font-weight: 800;
+    }
+
+    p {
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.8;
+        font-size: 1.05rem;
+    }
+
+    @media (max-width: 767.98px) {
+        min-height: 20rem;
+    }
+}
+
+.overlay-feature-block + .overlay-feature-block {
+    margin-top: 2.5rem;
+}
+
+// ---------- Our Values ----------
+
+.value-card {
+    background: var(--surface-bg);
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    border-top: 4px solid var(--primary-color);
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px var(--shadow-color);
+    }
+
+    h3 {
+        color: var(--primary-color);
+
+        @media (prefers-color-scheme: dark) {
+            color: var(--text-primary);
+        }
+    }
+
+    p {
+        color: var(--text-secondary);
+    }
+}
+
+.value-icon {
+    width: 4rem;
+    height: 4rem;
+    margin: 0 auto 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4a1f6f 0%, #6b2c8f 100%);
+    color: #ffc72c;
+    font-size: 1.6rem;
+}
+
+// ---------- Our History timeline ----------
+
+.history-timeline {
+    position: relative;
+    max-width: 60rem;
+    margin: 0 auto;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0.6rem;
+        bottom: 0.6rem;
+        left: 0.6rem;
+        width: 2px;
+        background: var(--border-color);
+    }
+}
+
+.timeline-entry {
+    position: relative;
+    display: flex;
+    gap: 1.5rem;
+
+    & + & {
+        margin-top: 0.5rem;
+    }
+}
+
+.timeline-marker-col {
+    flex: 0 0 auto;
+    width: 1.25rem;
+    display: flex;
+    justify-content: center;
+    padding-top: 1.6rem;
+}
+
+.timeline-dot {
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    border: 3px solid var(--surface-bg);
+    box-shadow: 0 0 0 2px var(--secondary-color);
+    position: relative;
+    z-index: 1;
+}
+
+.timeline-content {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding-bottom: 1rem;
+}
+
+.timeline-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    background: var(--surface-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 1.1rem 1.5rem;
+    box-shadow: 0 5px 20px var(--shadow-color);
+    transition: all 0.3s ease;
+    text-align: left;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 40px var(--shadow-color);
+    }
+
+    &:not(.collapsed) .timeline-chevron {
+        transform: rotate(180deg);
+    }
+
+    @media (max-width: 767.98px) {
+        padding: 0.9rem 1.1rem;
+    }
+}
+
+.timeline-summary {
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--primary-color);
+
+    @media (prefers-color-scheme: dark) {
+        color: var(--text-primary);
+    }
+
+    @media (max-width: 767.98px) {
+        font-size: 1rem;
+    }
+}
+
+.timeline-chevron {
+    color: var(--secondary-color);
+    transition: transform 0.3s ease;
+    flex: 0 0 auto;
+}
+
+.timeline-details {
+    padding: 1.5rem 0.25rem 0.5rem;
+}
+
+.history-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 1.25rem;
+}
+
+.history-text {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+// ---------- Our Alumni Network belt ----------
+
+.alumni-belt-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.alumni-belt {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 1rem 0.25rem 1.5rem;
+    flex: 1 1 auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.alumni-card {
+    // Sized as a fraction of the belt's own width (1 card on mobile, 2 on
+    // tablet, 3 on desktop) rather than a fixed pixel width, so exactly N
+    // whole cards fill the visible area with none partially cut off at
+    // the edge - box-sizing: border-box (from Bootstrap's reset) keeps
+    // the padding/border inside that percentage.
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    width: 100%;
+    display: flex;
+    gap: 1.25rem;
+    background: var(--surface-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px var(--shadow-color);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px var(--shadow-color);
+    }
+
+    @media (min-width: 576px) {
+        width: calc((100% - 1.5rem) / 2);
+    }
+
+    @media (min-width: 992px) {
+        width: calc((100% - 3rem) / 3);
+    }
+
+    @media (max-width: 767.98px) {
+        padding: 1.25rem;
+    }
+}
+
+.alumni-card-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex: 0 0 auto;
+    border: 3px solid var(--accent-color);
+}
+
+.alumni-card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+}
+
+.alumni-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+
+    @media (prefers-color-scheme: dark) {
+        color: var(--text-primary);
+    }
+}
+
+.alumni-pledge {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+}
+
+.alumni-position {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.alumni-quote {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-bottom: 0;
+}
+
+.belt-control {
+    flex: 0 0 auto;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: var(--surface-bg);
+    box-shadow: 0 10px 25px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    color: var(--primary-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: #fff;
+        background: linear-gradient(135deg, var(--secondary-color) 0%, #a01829 100%);
+        border-color: transparent;
+    }
+}

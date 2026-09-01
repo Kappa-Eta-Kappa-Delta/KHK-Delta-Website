@@ -1,0 +1,61 @@
+# "Our History" timeline shown on the About page.
+# Add/remove/reorder entries here — the about page just loops over
+# this list in order. `id` must be unique (used for the collapsible
+# section's element id).
+- id: "1923"
+  summary: "1923: KHK's Founding"
+  image: "assets/img/executive_board.jpg"
+  image_alt: "KHK in 1923"
+  text: >
+    On February 10th, 1923, the first chapter of KHK was born at the University
+    of Iowa, led by Clinton Smoke, Theodore D. Pals, George C.K. Johnson, and
+    Herbert K. Shore. A legacy spanning over a hundred years begins&hellip;
+  image_side: "left"
+
+- id: "1924"
+  summary: "1924: Delta Chapter's Founding"
+  image: "assets/img/org_fair_table.jpg"
+  image_alt: "KHK in 1924"
+  text: >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+  image_side: "right"
+
+- id: "1930"
+  summary: "1930: The Great Depression"
+  image: "assets/img/resume_workshop.jpg"
+  image_alt: "KHK in 1930"
+  text: >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam.
+  image_side: "left"
+
+- id: "1945"
+  summary: "1945: The Impact of World War II"
+  image: "assets/img/spring_2025_casino_night.jpg"
+  image_alt: "KHK in 1945"
+  text: >
+    Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
+  image_side: "right"
+
+- id: "2020"
+  summary: "2020: Surviving Covid"
+  image: "assets/img/2025_active_membership.jpg"
+  image_alt: "KHK in 2020"
+  text: >
+    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+    doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore.
+  image_side: "left"
+
+- id: "2026"
+  summary: "2026: A Year of Thriving"
+  image: "assets/img/NEC_Spr_26_Delta_Photo.jpeg"
+  image_alt: "KHK in 2026"
+  text: >
+    Across the 2025-2026 Academic Year, KHK Delta's members helped our National
+    Committee secure not one but 2 new charters back to back - Kappa in Chicago
+    and Lambda in Michigan. To cap off this landmark step forward, a team of our
+    actives won 2nd place in the Engineering Expo in Spring 2026. Through
+    multiple great struggles, Delta nonetheless found itself in a thriving era.
+  image_side: "right"

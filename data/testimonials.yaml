@@ -1,0 +1,23 @@
+# Rush page testimonials. Add/remove/reorder entries here — the rush
+# page just loops over this list in order, alternating the photo
+# between left/right of the quote as it goes.
+#
+# NOTE: the quote text below is still the placeholder Rick quote
+# (ported as-is from the live site) — edit these with real member
+# testimonials whenever they're ready. photo/program are pulled from
+# each person's actual entry in data/members.json.
+- author: "Michael Cortese"
+  program: "Computer Sciences"
+  photo: "assets/img/members/Cortese, Michael.jpg"
+  quote: >
+    Example quotation hyping up KHK
+- author: "Daniel Sandoval"
+  program: "Personal Finance"
+  photo: "assets/img/members/Sandoval, Daniel.jpg"
+  quote: >
+    Example quotation hyping up KHK
+- author: "Eva Skarabot"
+  program: "Computer Sciences"
+  photo: "assets/img/members/Skarabot, Eva.jpg"
+  quote: >
+    Example quotation hyping up KHK

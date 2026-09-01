@@ -1,29 +1,25 @@
 {{ define "main" }}
-<div class="row">
-	<div class="12u">
-		<section class="post">
-			<header class="major">
-				<h2>{{ .Title }}</h2>
-				<p>Posted {{ .Date.Format "Jan 2 2006" }} by {{ .Params.author }}</p>
-			</header>
-			<div class="row">
-				<div class="8u -2u">
-					<section class="box">
-						<span class="image featured"><img src="{{ .Params.featured }}"
-								alt="{{ .Params.title }}" /></span>
-						{{ .Content }}
-					</section>
-				</div>
-			</div>
-			<footer class="major">
-				{{ with .Params.address }}
-				<a style="text-decoration: underline;"
-					href="https://www.google.com/maps/dir/?api=1&travelmode=walking&destination={{ . }}">
-					<h2>{{ . }}</h2>
-				</a>
-				{{ end }}
-			</footer>
-		</section>
-	</div>
-</div>
+<main>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <article class="py-4">
+                    <a href="/posts/" class="post-back-button">
+                        <i class="fas fa-arrow-left"></i> Back to News
+                    </a>
+
+                    <header class="post-header mb-4">
+                        <img class="post-header-image" src="{{ .Params.image | relURL }}" alt="{{ .Title }}">
+                        <span class="post-date">{{ .Date.Format "January 2, 2006" }}</span>
+                        <h1 class="post-header-title">{{ .Title }}</h1>
+                    </header>
+
+                    <div class="post-body">{{ .Content }}</div>
+
+                    <p class="post-author">Written by {{ .Params.author }}</p>
+                </article>
+            </div>
+        </div>
+    </div>
+</main>
 {{ end }}

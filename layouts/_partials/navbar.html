@@ -1,0 +1,36 @@
+{{/*
+  Shared navbar, Hugo-native replacement for js/navbar.js.
+
+  To add/remove/rename a link: edit [[menus.main]] in hugo.toml, not
+  this file. Each entry's `url` is the page it links to; an optional
+  `params.anchor` (only "Home" uses this) makes it jump to that
+  in-page section id on the homepage instead of loading a fresh page;
+  an optional `params.sectionmatch` keeps the link highlighted while
+  anywhere in that content section (e.g. "News" stays active on
+  individual post pages, not just the news list).
+*/}}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ if .IsHome }}#home{{ else }}{{ "/" | relLangURL }}{{ end }}">
+            <img src="{{ "assets/svg/logo.svg" | relURL }}" alt="KHK Logo" class="navbar-logo">
+            <span class="ms-2">{{ .Site.Params.navtitle | default .Site.Title }}</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                {{ range .Site.Menus.main }}
+                {{ $isActive := or (eq $.RelPermalink .URL) (and (isset .Params "sectionmatch") (eq $.Section .Params.sectionmatch)) }}
+                {{ $href := .URL }}
+                {{ if isset .Params "anchor" }}
+                    {{ $href = cond $.IsHome (printf "#%s" .Params.anchor) (printf "/#%s" .Params.anchor) }}
+                {{ end }}
+                <li class="nav-item">
+                    <a class="nav-link{{ if $isActive }} active{{ end }}" href="{{ $href }}">{{ .Name }}</a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+</nav>

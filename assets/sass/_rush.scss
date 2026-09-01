@@ -1,0 +1,475 @@
+// ==========================================
+// RUSH PAGE STYLES — ported from css/rush.css
+// ==========================================
+
+// "What KHK Does" would otherwise inherit its background from .rush-section
+// in _home.scss (that rule was written for the homepage's "Join Our
+// Brotherhood" section, id="rush" — this page's plain .rush-section element
+// picks it up too, by accident, since Hugo compiles every partial into one
+// stylesheet). This dedicated class overrides it so the section directly
+// above ("Dates for Rush", --surface-bg-alt via .bg-light) and this one
+// don't render as the same adjacent background.
+.what-khk-does-section {
+    background: var(--surface-bg);
+}
+
+// .rush-socials has no background rule of its own otherwise, so it falls
+// through to the page's base --page-bg — identical to .rush-faq right
+// before it. This keeps the two adjacent sections visually distinct.
+.rush-socials {
+    background: var(--surface-bg);
+}
+
+.rush-hero {
+    position: relative;
+    // Page-specific override (was an inline <style> block in rush.html):
+    // a plain black tint instead of the purple gradient below it, and
+    // the ::after radial accent disabled — kept as the one true
+    // definition here since .rush-hero is only ever used on this page.
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), transparent url('/assets/img/org_fair_table.jpg') center/cover no-repeat;
+    color: #fff;
+    overflow: hidden;
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: none;
+        pointer-events: none;
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .lead {
+        max-width: 60ch;
+    }
+
+    @media (max-width: 767.98px) {
+        .display-4 {
+            font-size: calc(1.45rem + 2.2vw);
+        }
+
+        .btn-lg {
+            width: 100%;
+        }
+    }
+}
+
+.section-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #ffc72c;
+}
+
+.instagram-copy .lead,
+.rush-section-lead {
+    max-width: 60ch;
+}
+
+.rush-hero-card,
+.info-panel,
+.event-date-card,
+.instagram-frame-shell {
+    background: var(--surface-bg);
+    color: var(--text-primary);
+    border-radius: 1.25rem;
+    box-shadow: 0 18px 45px var(--shadow-color);
+}
+
+.rush-hero-card {
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    @media (max-width: 991.98px) {
+        max-width: 30rem;
+        margin: 0 auto;
+    }
+}
+
+.rush-hero-card-top {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 1rem 1.25rem;
+    background: linear-gradient(135deg, #4a1f6f 0%, #6b2c8f 100%);
+    color: #fff;
+    font-weight: 400;
+
+    i {
+        color: #ffc72c;
+    }
+}
+
+.rush-hero-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
+
+.rush-section,
+.rush-faq,
+.rush-socials,
+.rush-testimonials {
+    position: relative;
+}
+
+.info-panel,
+.instagram-copy,
+.instagram-frame-shell,
+.event-date-card {
+    padding: 1.75rem;
+
+    @media (max-width: 767.98px) {
+        padding: 1.25rem;
+        border-radius: 1rem;
+    }
+}
+
+.info-panel {
+    border-top: 4px solid var(--primary-color);
+}
+
+.rush-stat-row {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 1.25rem;
+}
+
+.rush-stat-number {
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 999px;
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    color: #fff;
+    background: linear-gradient(135deg, #4a1f6f 0%, #6b2c8f 100%);
+    box-shadow: 0 12px 24px rgba(74, 31, 111, 0.22);
+}
+
+.event-date-card {
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 22px 42px var(--shadow-color);
+    }
+}
+
+.event-date {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(74, 31, 111, 0.08);
+    color: var(--primary-color);
+    font-size: 0.92rem;
+    font-weight: 400;
+
+    @media (prefers-color-scheme: dark) {
+        background: rgba(255, 199, 44, 0.08);
+        color: var(--accent-color);
+    }
+}
+
+.section-heading h2,
+.instagram-copy h2 {
+    color: var(--primary-color);
+
+    @media (prefers-color-scheme: dark) {
+        color: var(--text-primary);
+    }
+}
+
+.rush-section-lead {
+    color: var(--text-secondary);
+    max-width: 62rem;
+}
+
+.rush-accordion .accordion-item {
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 12px 30px var(--shadow-color);
+    margin-bottom: 1rem;
+}
+
+.rush-accordion .accordion-button {
+    font-weight: 700;
+    color: var(--text-primary);
+    background: var(--surface-bg);
+    padding: 1.2rem 1.25rem;
+
+    &:not(.collapsed) {
+        color: #fff;
+        background: linear-gradient(135deg, #4a1f6f 0%, #6b2c8f 100%);
+        box-shadow: none;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 0.2rem rgba(74, 31, 111, 0.18);
+    }
+}
+
+.rush-accordion .accordion-body {
+    padding: 1.15rem 1.25rem 1.35rem;
+    color: var(--text-secondary);
+    background: var(--surface-bg);
+}
+
+.instagram-copy {
+    background: linear-gradient(180deg, var(--surface-bg) 0%, var(--surface-bg-alt) 100%);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (max-width: 991.98px) {
+        min-height: auto;
+    }
+
+    .btn-lg {
+        @media (max-width: 767.98px) {
+            width: 100%;
+        }
+    }
+}
+
+.instagram-frame-shell {
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.instagram-frame-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    // Pinned to a fixed height (not just a minimum) so the embed frame
+    // below always starts at the same offset across the Instagram/LinkedIn/
+    // TikTok cards, regardless of whether a given account name is short
+    // enough to fit on one line or would otherwise wrap to two.
+    height: 3.5rem;
+    overflow: hidden;
+
+    // The text column needs to be allowed to shrink below its content size
+    // for the truncation below to actually kick in inside a flex row.
+    > div:last-child {
+        min-width: 0;
+    }
+
+    h3,
+    p {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
+.instagram-avatar {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: linear-gradient(135deg, #4a1f6f 0%, #c41e3a 100%);
+    box-shadow: 0 12px 24px rgba(74, 31, 111, 0.2);
+    font-size: 1.2rem;
+    flex: 0 0 auto;
+}
+
+.linkedin-avatar {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: linear-gradient(45deg, #0a66c2 0%, #691f62 100%);
+    box-shadow: 0 12px 24px rgba(74, 31, 111, 0.2);
+    font-size: 1.2rem;
+    flex: 0 0 auto;
+}
+
+.tiktok-avatar {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: linear-gradient(135deg, #25f4ee 0%, #000 55%, #fe2c55 100%);
+    box-shadow: 0 12px 24px rgba(74, 31, 111, 0.2);
+    font-size: 1.2rem;
+    flex: 0 0 auto;
+}
+
+.instagram-frame {
+    border-radius: 1rem;
+    overflow: hidden;
+    background: var(--surface-bg-alt);
+    border: 1px solid var(--border-color);
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        background: var(--surface-bg);
+    }
+}
+
+// Instagram's and TikTok's official embeds each pick their own width/height
+// by default, and those defaults don't match each other — so instead of
+// letting either embed size itself, this gives both cards one identical
+// fixed-size box and forces the embed (and whatever iframe it generates
+// inside itself once its script runs) to fill it. That's what actually
+// guarantees the two cards render at equal dimensions, rather than each
+// platform's embed picking its own, slightly different size.
+.social-post-frame {
+    width: 100%;
+    max-width: 380px;
+    height: 540px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    background: var(--surface-bg-alt);
+    border: 1px solid var(--border-color);
+    display: flex;
+    justify-content: center;
+
+    > blockquote {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+    }
+}
+
+.instagram-note {
+    margin-top: 1rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.py-lg-6 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.text-white-75 {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+@media (max-width: 991.98px) {
+    .rush-hero,
+    .rush-section,
+    .rush-faq,
+    .rush-socials,
+    .rush-testimonials,
+    .interest-section {
+        text-align: left;
+    }
+}
+
+.interest-form {
+    input {
+        border: 1px solid var(--border-color);
+        border-radius: 50px 0 0 50px;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        background: var(--surface-bg);
+        color: var(--text-primary);
+
+        &:focus {
+            box-shadow: none;
+            border-color: var(--primary-color);
+            background: var(--surface-bg);
+            color: var(--text-primary);
+        }
+    }
+
+    button {
+        background: linear-gradient(135deg, var(--secondary-color) 0%, #a01829 100%);
+        border: none;
+        border-radius: 0 50px 50px 0;
+        font-weight: 400;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: translateX(3px);
+            box-shadow: 0 5px 15px rgba(196, 30, 58, 0.3);
+        }
+    }
+}
+
+.testimonial-photo {
+    border-radius: 999px;
+
+    @media (max-width: 768px) {
+        display: none !important;
+    }
+}
+
+.testimonial-content {
+    font-size: 1.05rem;
+}
+
+.testimonial-text {
+    color: var(--text-secondary);
+}
+
+.testimonial-author {
+    font-weight: 400;
+    color: var(--text-primary);
+
+    &:before {
+        content: '— ';
+    }
+}
+
+// ---------- Event details (icon list) ----------
+
+.event-details {
+    list-style-type: none;
+    padding-left: 1.5rem;
+
+    li {
+        position: relative;
+
+        &::before {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+        }
+
+        &.icon-clock::before {
+            content: '\f017';
+            left: -1.5rem;
+            top: 0.1rem;
+        }
+
+        &.icon-location::before {
+            content: '\f3c5';
+            left: -1.375rem;
+            top: 0.1rem;
+        }
+    }
+}

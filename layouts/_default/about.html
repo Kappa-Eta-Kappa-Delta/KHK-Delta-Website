@@ -1,0 +1,159 @@
+{{ define "main" }}
+{{ $teaser := .Params.our_home_teaser }}
+<main>
+    <!-- About Header -->
+    <section class="about-hero-image-section"></section>
+
+    <!-- About Us Intro -->
+    <section class="about-intro-section py-5 text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">{{ .Title }}</h1>
+            {{ range $i, $p := .Params.intro }}
+            <p class="lead {{ if eq (add $i 1) (len $.Params.intro) }}mb-0{{ else }}mb-3{{ end }}">{{ $p }}</p>
+            {{ end }}
+        </div>
+    </section>
+
+    <!-- Our Vision & Mission -->
+    <section class="overlay-feature-section vision-mission-overlay-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="overlay-feature-block" id="vision">
+                        <h2 class="display-5 fw-bold mb-4">Our Vision</h2>
+                        <p class="lead mb-0">{{ .Params.vision }}</p>
+                    </div>
+                    <div class="overlay-feature-block" id="mission">
+                        <h2 class="display-5 fw-bold mb-4">Our Mission</h2>
+                        <p class="lead mb-0">{{ .Params.mission }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section id="values" class="values-section py-5 bg-light">
+        <div class="container">
+            <div class="section-heading text-center mb-5">
+                <h2 class="display-6 fw-bold mt-2 mb-3">Our Values</h2>
+                <p class="lead mx-auto about-section-lead">
+                    The principles that guide who we are and how we grow together.
+                </p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                {{ range .Params.values }}
+                <div class="col-md-6 col-lg-4">
+                    <div class="value-card text-center h-100">
+                        <div class="value-icon"><i class="{{ .icon }}"></i></div>
+                        <h3 class="h4 fw-bold mb-2">{{ .title }}</h3>
+                        <p class="mb-0">{{ .text }}</p>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Our History -->
+    <section id="history" class="history-section py-5">
+        <div class="container">
+            <div class="section-heading text-center mb-5">
+                <h2 class="display-6 fw-bold mt-2 mb-3">Our History</h2>
+                <p class="lead mx-auto about-section-lead">
+                    A century of milestones. Click on a year to read more about our chapter's history.
+                </p>
+            </div>
+            <div class="history-timeline">
+                {{ range site.Data.history }}
+                {{ $targetId := printf "historyYear%s" .id }}
+                <div class="timeline-entry">
+                    <div class="timeline-marker-col">
+                        <span class="timeline-dot"></span>
+                    </div>
+                    <div class="timeline-content">
+                        <button class="timeline-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{ $targetId }}" aria-expanded="false" aria-controls="{{ $targetId }}">
+                            <span class="timeline-summary">{{ .summary | safeHTML }}</span>
+                            <i class="fas fa-chevron-down timeline-chevron"></i>
+                        </button>
+                        <div class="collapse" id="{{ $targetId }}">
+                            <div class="timeline-details">
+                                {{ if or (eq .id "2020") (eq .id "2026") }}
+                                <div class="row align-items-center g-4">
+                                    <div class="col-md-5{{ if eq .image_side "right" }} order-md-2{{ end }}">
+                                        <img src="{{ .image | relURL }}" alt="{{ .image_alt }}" class="img-fluid history-image" loading="lazy">
+                                    </div>
+                                    <div class="col-md-7{{ if eq .image_side "right" }} order-md-1{{ end }}">
+                                        <p class="history-text mb-0">{{ .text | safeHTML }}</p>
+                                    </div>
+                                </div>
+                                {{ else }}
+                                <p class="history-text mb-0">{{ .text | safeHTML }}</p>
+                                {{ end }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Home -->
+    <section id="our-home" class="our-home-section py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="display-5 fw-bold mt-2 mb-4">Our Home</h2>
+                    <p class="mb-3">{{ $teaser.lead }}</p>
+                    <p class="mb-4">{{ $teaser.copy }}</p>
+                    {{/* TEMP (Temp branch): button hidden while /our-home/ is deactivated.
+                         Restore this line to bring it back.
+                    <a href="{{ $teaser.button_url }}" class="btn btn-primary">{{ $teaser.button_text }}</a>
+                    */}}
+                </div>
+                <div class="col-lg-6">
+                    <img src="{{ $teaser.image | relURL }}" alt="{{ $teaser.image_alt }}" class="img-fluid rounded-3 shadow-lg" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Alumni Network -->
+    <section id="alumni-network" class="alumni-network-section py-5">
+        <div class="container-fluid px-4 px-lg-5">
+            <div class="section-heading text-center mb-5">
+                <h2 class="display-6 fw-bold mt-2 mb-3">Our Alumni Network</h2>
+                <p class="lead mx-auto about-section-lead">Use the arrows to scroll through members of our growing alumni network.</p>
+            </div>
+            <div class="alumni-belt-wrapper">
+                <button class="belt-control belt-control-prev" type="button" aria-label="Scroll to previous alumnus">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="alumni-belt" id="alumniBelt">
+                    {{ range site.Data.alumni_testimonials }}
+                    {{ if ne .available false }}
+                    <div class="alumni-card">
+                        <img src="{{ if .photo }}{{ .photo | relURL }}{{ else }}{{ "assets/img/rick-cropped.png" | relURL }}{{ end }}" alt="Alumni headshot" class="alumni-card-img" loading="lazy">
+                        <div class="alumni-card-body">
+                            <h3 class="alumni-name">{{ .name }}</h3>
+                            <p class="alumni-pledge mb-0">{{ .pledge_class }}</p>
+                            <p class="alumni-position">{{ .position }}</p>
+                            <p class="alumni-quote mb-0">&quot;{{ .quote }}&quot;</p>
+                        </div>
+                    </div>
+                    {{ end }}
+                    {{ end }}
+                </div>
+                <button class="belt-control belt-control-next" type="button" aria-label="Scroll to next alumnus">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+</main>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="{{ "js/about.js" | relURL }}"></script>
+{{ end }}

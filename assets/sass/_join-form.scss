@@ -1,0 +1,56 @@
+// ==========================================
+// "INTERESTED IN JOINING?" SIGN-UP FORM — ported from css/join-form.css
+// Shared by the home and rush pages (built by js/join-form.js).
+// ==========================================
+
+.join-form-section {
+    background: var(--surface-bg-alt);
+
+    h2 {
+        color: var(--primary-color);
+        font-weight: 800;
+
+        @media (prefers-color-scheme: dark) {
+            color: var(--text-primary);
+        }
+    }
+}
+
+.join-form {
+    .form-control,
+    .form-select {
+        border: 1px solid var(--border-color);
+        border-radius: 50px;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        background: var(--surface-bg);
+        color: var(--text-primary);
+
+        &:focus {
+            box-shadow: none;
+            border-color: var(--primary-color);
+            background: var(--surface-bg);
+            color: var(--text-primary);
+        }
+    }
+
+    button[type="submit"] {
+        background: linear-gradient(135deg, var(--secondary-color) 0%, #a01829 100%);
+        border: none;
+        border-radius: 50px;
+        padding: 0.75rem 2.75rem;
+        font-weight: 400;
+        color: #fff;
+        transition: all 0.3s ease;
+
+        &:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(196, 30, 58, 0.3);
+        }
+
+        &:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+    }
+}

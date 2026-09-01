@@ -1,8 +1,8 @@
-name: Deploy Hugo site to GitHub Pages
+name: Deploy Hugo site to Pages
 
 on:
   push:
-    branches: ["main"]   # deploy on pushes to main
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -14,33 +14,50 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
+defaults:
+  run:
+    shell: bash
 
+env:
+  HUGO_VERSION: 0.164.0
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.151.0'   # or your preferred version
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: true
 
       - name: Setup Pages
-        id: pages
         uses: actions/configure-pages@v5
 
-      - name: Build Hugo site
-        run: hugo --minify --baseURL "${{ steps.pages.outputs.base_path }}"
+      - name: Build
+        env:
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        # baseURL comes from hugo.toml (https://delta.khk.org/, matching
+        # static/CNAME) — not overridden here, since this deploys to a
+        # custom domain rather than the default project-pages subpath.
+        run: hugo --gc --minify
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: public
+          path: ./public
 
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
