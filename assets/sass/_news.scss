@@ -1,0 +1,302 @@
+// ==========================================
+// NEWS / POSTS PAGES — ported from css/news.css
+// Shared styles for the news list page, all-posts archive, and
+// single-post view.
+// ==========================================
+
+.news-hero {
+    padding: 3rem 0 1.5rem;
+
+    h1 {
+        color: var(--text-primary);
+    }
+
+    .lead {
+        color: var(--text-secondary);
+    }
+}
+
+.news-section-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+
+    h2 {
+        color: var(--text-primary);
+        font-weight: 700;
+        margin: 0;
+    }
+}
+
+.view-all-link {
+    color: var(--secondary-color);
+    font-weight: 400;
+    text-decoration: none;
+    white-space: nowrap;
+
+    &:hover {
+        color: var(--primary-color);
+        text-decoration: underline;
+    }
+}
+
+.news-loading,
+.news-empty {
+    color: var(--text-muted);
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+// ---------- Featured (large, latest) post ----------
+
+.featured-post {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    background-color: var(--surface-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 2px 15px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    height: 100%;
+
+    &:hover {
+        color: inherit;
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px var(--shadow-color);
+    }
+}
+
+.featured-post-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+}
+
+.featured-post-body {
+    padding: 1.5rem;
+}
+
+.post-date {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.5rem;
+}
+
+.featured-post-title {
+    color: var(--text-primary);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.featured-post-excerpt {
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+// ---------- Compact list rows ----------
+
+.post-row-list {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    @media (max-width: 991.98px) {
+        margin-top: 2rem;
+    }
+
+    .post-row:first-child {
+        padding-top: 0;
+    }
+
+    .post-row:last-child {
+        border-bottom: none;
+    }
+}
+
+.post-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 0;
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid var(--border-color);
+
+    &:hover {
+        color: inherit;
+
+        .post-row-title {
+            color: var(--secondary-color);
+        }
+    }
+}
+
+.post-row-image {
+    flex: 0 0 auto;
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+}
+
+.post-row-content {
+    flex: 1 1 auto;
+    min-width: 0;
+
+    .post-date {
+        margin-bottom: 0.25rem;
+    }
+}
+
+.post-row-title {
+    color: var(--text-primary);
+    font-weight: 600;
+    margin: 0;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+}
+
+// ---------- All-posts page (full list) ----------
+
+.all-posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.all-posts-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+    background-color: var(--surface-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 15px var(--shadow-color);
+    padding: 1.25rem;
+
+    @media (max-width: 575.98px) {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+.all-posts-row-image {
+    flex: 0 0 auto;
+    width: 220px;
+    max-width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+
+    @media (max-width: 575.98px) {
+        width: 100%;
+        height: 180px;
+    }
+}
+
+.all-posts-row-content {
+    flex: 1 1 260px;
+    min-width: 0;
+}
+
+.all-posts-row-title {
+    color: var(--text-primary);
+    font-weight: 700;
+    margin: 0.25rem 0 0;
+}
+
+.catch-up-btn {
+    flex: 0 0 auto;
+    white-space: nowrap;
+
+    @media (max-width: 575.98px) {
+        width: 100%;
+    }
+}
+
+.back-to-news-link {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 400;
+
+    &:hover {
+        color: var(--secondary-color);
+    }
+}
+
+// ---------- Single post page ----------
+
+.post-back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 400;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+
+    &:hover {
+        color: var(--secondary-color);
+    }
+}
+
+.post-header-image {
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 15px var(--shadow-color);
+    margin-bottom: 1.5rem;
+}
+
+.post-header-title {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.post-header .post-date {
+    text-transform: none;
+    font-size: 1rem;
+    letter-spacing: normal;
+}
+
+.post-body {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 2rem 0;
+
+    p {
+        margin-bottom: 1.25rem;
+    }
+}
+
+.post-author {
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.25rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+.post-not-found {
+    text-align: center;
+    padding: 4rem 1rem;
+    color: var(--text-secondary);
+}

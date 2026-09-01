@@ -1,0 +1,278 @@
+{{ define "main" }}
+{{ $hero := .Params.hero }}
+{{ $socials := .Params.socials }}
+<header class="rush-hero">
+    <div class="container py-5 py-lg-6">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-7">
+                <span class="section-kicker">{{ $hero.kicker }}</span>
+                <h1 class="display-4 fw-bold mt-3 mb-4">{{ $hero.heading }}</h1>
+                <p class="mb-4">{{ $hero.lead }}</p>
+                <p class="mb-4 text-white-75">{{ $hero.copy }}</p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="#events" class="btn btn-primary btn-lg">See Upcoming Events</a>
+                    <a href="#faq" class="btn btn-outline-light btn-lg">Rush FAQs</a>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="rush-hero-card shadow-lg">
+                    <div class="rush-hero-card-top">
+                        <i class="fas fa-bolt"></i>
+                        <span>#rushkhk</span>
+                    </div>
+                    <img src="{{ $hero.image | relURL }}" alt="{{ $hero.image_alt }}" class="img-fluid rush-hero-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Rush Events -->
+    <section id="events" class="rush-events py-5 bg-light">
+        <div class="container">
+            <div class="section-heading text-center mb-5">
+                <span class="section-kicker text-dark">Upcoming Events</span>
+                <h2 class="display-6 fw-bold mt-2 mb-3">Dates for Rush</h2>
+                <p class="lead mx-auto rush-section-lead">
+                    Rush events are a mix of professional and social activities designed to give you a well-rounded experience of the chapter. Attend as many as you can to meet different members and see what KHK is all about!
+                </p>
+            </div>
+            <div class="row g-4">
+                {{ range .Params.events }}
+                <div class="col-md-6 col-lg-4">
+                    <div class="event-date-card h-100">
+                        <div class="event-date">{{ .date }}</div>
+                        <h3 class="h5 fw-bold">{{ .title }}</h3>
+                        <p class="text-muted mb-2">{{ .text }}</p>
+                        <ul class="mb-0 text-muted event-details">
+                            <li class="icon-clock"> {{ .time }}</li>
+                            <li class="icon-location"> {{ .location }}</li>
+                        </ul>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <section class="rush-section what-khk-does-section py-5">
+        <div class="container">
+            <div class="row g-4 align-items-stretch">
+                <div class="col-lg-7">
+                    <div class="info-panel h-100">
+                        <h2 class="display-6 fw-bold mb-4">What KHK Does</h2>
+                        {{ range $i, $p := .Params.what_khk_does }}
+                        <p class="{{ if eq (add $i 1) (len $.Params.what_khk_does) }}mb-0{{ else }}mb-3{{ end }}">{{ $p }}</p>
+                        {{ end }}
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="info-panel h-100 rush-side-card">
+                        <h2 class="h3 fw-bold mb-4">Rush at a Glance</h2>
+                        {{ range $i, $g := .Params.glance }}
+                        <div class="rush-stat-row{{ if eq (add $i 1) (len $.Params.glance) }} mb-0{{ end }}">
+                            <div class="rush-stat-number">{{ $g.number }}</div>
+                            <div>
+                                <h3 class="h5 mb-1">{{ $g.title }}</h3>
+                                <p class="mb-0 text-muted">{{ $g.text }}</p>
+                            </div>
+                        </div>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="rush-faq py-5">
+        <div class="container">
+            <div class="section-heading text-center mb-5">
+                <span class="section-kicker">FAQs</span>
+                <h2 class="display-6 fw-bold mt-2 mb-3">Rush Process Questions</h2>
+                <p class="lead mx-auto rush-section-lead">
+                    A few common questions from prospective members.
+                </p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="accordion rush-accordion" id="rushFaqAccordion">
+                        {{ range $i, $f := site.Data.faq }}
+                        {{ $qid := printf "faq%d" $i }}
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="{{ $qid }}Heading">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{ $qid }}" aria-expanded="false" aria-controls="{{ $qid }}">
+                                    {{ $f.question }}
+                                </button>
+                            </h2>
+                            <div id="{{ $qid }}" class="accordion-collapse collapse" aria-labelledby="{{ $qid }}Heading" data-bs-parent="#rushFaqAccordion">
+                                <div class="accordion-body">
+                                    {{ $f.answer }}
+                                </div>
+                            </div>
+                        </div>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{/* TEMP: "What Our Members Say" testimonials section hidden for now.
+         Remove this comment wrapper to bring it back. */}}
+    {{/*
+    <!-- Testimonials -->
+    <section id="testimonials" class="rush-testimonials py-5 bg-light">
+        <div class="container">
+            <div class="section-heading text-center mb-5">
+                <span class="section-kicker text-dark">Testimonials</span>
+                <h2 class="display-6 fw-bold mt-2 mb-3">What Our Members Say</h2>
+            </div>
+            {{ range $i, $t := site.Data.testimonials }}
+            {{ $imageFirst := eq (mod $i 2) 0 }}
+            <div class="row g-4 justify-content-center mb-5">
+                {{ if $imageFirst }}
+                <div class="col-md-4">
+                    <img src="{{ $t.photo | relURL }}" alt="{{ $t.author }} Testimonial" class="d-block mx-auto testimonial-photo" height="180" loading="lazy">
+                </div>
+                {{ end }}
+                <div class="col-md-8 d-flex align-items-center">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text mb-3">&quot;{{ $t.quote }}&quot;</p>
+                        <p class="testimonial-author mb-0">{{ $t.author }}, {{ $t.program }}</p>
+                    </div>
+                </div>
+                {{ if not $imageFirst }}
+                <div class="col-md-4">
+                    <img src="{{ $t.photo | relURL }}" alt="{{ $t.author }} Testimonial" class="d-block mx-auto testimonial-photo" height="180" loading="lazy">
+                </div>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+    </section>
+    */}}
+
+    <!-- Social Media -->
+    <section class="rush-socials py-5">
+        <div class="container">
+            <div class="section-heading text-center mb-5">
+                <span class="section-kicker">Our Socials</span>
+                <h2 class="display-6 fw-bold mt-2 mb-3">Follow @khkdelta</h2>
+                <p class="lead mb-4">{{ $socials.intro }}</p>
+            </div>
+            <div class="row align-items-stretch g-4 justify-content-center">
+                <div class="col-lg-4"> <!-- Instagram -->
+                    <div class="instagram-frame-shell h-100">
+                        <div class="instagram-frame-header">
+                            <div class="instagram-avatar"><i class="fab fa-instagram"></i></div>
+                            <div>
+                                <h3 class="h5 mb-0">Kappa Eta Kappa</h3>
+                                <p class="mb-0 text-muted">{{ $socials.instagram_handle }}</p>
+                            </div>
+                        </div>
+                        {{/* Instagram's official single-post embed (embed.js scans the page
+                             for .instagram-media blockquotes and renders the post in place
+                             of each one). Swap instagram_post_url in content/rush.md to
+                             feature a different post. .social-post-frame forces this into
+                             the same fixed box as the TikTok embed below, since Instagram's
+                             and TikTok's embeds otherwise pick their own, different sizes. */}}
+                        <div class="social-post-frame">
+                            <blockquote class="instagram-media" data-instgrm-permalink="{{ $socials.instagram_post_url }}"
+                                data-instgrm-version="14">
+                            </blockquote>
+                            <script async src="//www.instagram.com/embed.js"></script>
+                        </div>
+                        <p class="instagram-note mb-0">
+                            If the embedded post does not load in your browser, use the button to open the account
+                            directly.
+                        </p>
+                        <div class="d-flex justify-content-center mt-3">
+                            <a class="btn btn-primary btn-lg" href="{{ $socials.instagram_url }}" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fab fa-instagram me-2"></i>Open Instagram
+                            </a>
+                        </div>
+                    </div>
+                </div> <!-- End Instagram -->
+                {{/* TEMP: LinkedIn card hidden for now. Remove this comment
+                     wrapper to bring it back (linkedin_name/linkedin_url are
+                     still set in content/rush.md). */}}
+                {{/*
+                <div class="col-lg-4"> <!-- LinkedIn -->
+                    <div class="instagram-frame-shell h-100">
+                        <div class="instagram-frame-header">
+                            <div class="linkedin-avatar"><i class="fab fa-linkedin"></i></div>
+                            <div>
+                                <h3 class="h5 mb-1">{{ $socials.linkedin_name }}</h3>
+                            </div>
+                        </div>
+                        <div class="instagram-frame ratio ratio-1x1">
+                            <p>
+                                LinkedIn Profile Embed In Progress
+                            </p>
+                        </div>
+                        <p class="instagram-note mb-0">
+                            If the embedded profile does not load in your browser, use the button to open the account
+                            directly.
+                        </p>
+                        <div class="d-flex justify-content-center mt-3">
+                            <a class="btn btn-primary btn-lg" href="{{ $socials.linkedin_url }}" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fab fa-linkedin me-2"></i>Open LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div> <!-- End LinkedIn -->
+                */}}
+                <div class="col-lg-4"> <!-- TikTok -->
+                    <div class="instagram-frame-shell h-100">
+                        <div class="instagram-frame-header">
+                            <div class="tiktok-avatar"><i class="fab fa-tiktok"></i></div>
+                            <div>
+                                <h3 class="h5 mb-0">{{ $socials.tiktok_name }}</h3>
+                                <p class="mb-0 text-muted">{{ $socials.tiktok_handle }}</p>
+                            </div>
+                        </div>
+                        {{/* TikTok's official single-video embed (embed.js scans the page
+                             for .tiktok-embed blockquotes and renders a player in place of
+                             each one). Swap tiktok_video_url/tiktok_video_id in
+                             content/rush.md to feature a different video. .social-post-frame
+                             forces this into the same fixed box as the Instagram embed
+                             above, since TikTok's and Instagram's embeds otherwise pick
+                             their own, different sizes. */}}
+                        <div class="social-post-frame">
+                            <blockquote class="tiktok-embed" cite="{{ $socials.tiktok_video_url }}"
+                                data-video-id="{{ $socials.tiktok_video_id }}">
+                                <section></section>
+                            </blockquote>
+                            <script async src="https://www.tiktok.com/embed.js"></script>
+                        </div>
+                        <p class="instagram-note mb-0">
+                            If the embedded video does not load in your browser, use the button to open the account
+                            directly.
+                        </p>
+                        <div class="d-flex justify-content-center mt-3">
+                            {{ if eq $socials.tiktok_url "TBD" }}
+                            <a class="btn btn-primary btn-lg disabled" href="#" aria-disabled="true" tabindex="-1">
+                                <i class="fab fa-tiktok me-2"></i>Open TikTok
+                            </a>
+                            {{ else }}
+                            <a class="btn btn-primary btn-lg" href="{{ $socials.tiktok_url }}" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fab fa-tiktok me-2"></i>Open TikTok
+                            </a>
+                            {{ end }}
+                        </div>
+                    </div>
+                </div> <!-- End TikTok -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Interested in Joining? Sign-up Form (see js/join-form.js) -->
+    <div id="join-form"></div>
+    <script src="{{ "js/join-form.js" | relURL }}"></script>
+</main>
+{{ end }}

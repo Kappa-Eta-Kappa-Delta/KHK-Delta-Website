@@ -1,0 +1,24 @@
+// ==========================================
+// KHK DELTA CHAPTER — MAIN STYLESHEET
+// Compiled by Hugo Pipes (see layouts/_partials/head.html) into one
+// bundled, fingerprinted, minified CSS file loaded on every page —
+// replacing the old per-page <link> tags to css/*.css.
+//
+// Order matters: variables first, then site-wide base rules, then
+// one partial per page/feature (each only affects the selectors it
+// defines, so load order between page partials doesn't matter, but
+// keeping variables/base first ensures every var(--...) is defined
+// before use).
+// ==========================================
+
+@import "variables";
+@import "base";
+
+@import "home";
+@import "about";
+@import "our-home";
+@import "rush";
+@import "news";
+@import "members";
+@import "moving-wall";
+@import "join-form";

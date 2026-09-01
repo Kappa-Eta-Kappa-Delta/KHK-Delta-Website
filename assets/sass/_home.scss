@@ -1,0 +1,429 @@
+// ==========================================
+// HOME PAGE STYLES — ported from css/home.css
+// ==========================================
+
+// ---------- Hero ----------
+
+.hero-section {
+    // Opacity here (0.6) matches the live page's inline override, not
+    // css/home.css's original 0.8 — kept as the one true definition.
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.1) 100%), url('/assets/img/2025_active_membership.jpg') center/cover no-repeat;
+    background-size: auto, cover;
+    color: white;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-text {
+    animation: slideInLeft 0.8s ease-out;
+    max-width: 600px;
+
+    h1 {
+        font-weight: 800;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        color: var(--accent-color);
+        font-weight: 600;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.hero-buttons {
+    margin-top: 2rem;
+
+    .btn {
+        font-weight: 400;
+        padding: 0.75rem 2rem;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, var(--secondary-color) 0%, #a01829 100%);
+        border: none;
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(196, 30, 58, 0.3);
+        }
+    }
+
+    .btn-outline-light {
+        border-width: 2px;
+
+        &:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+    }
+}
+
+.hero-crest {
+    max-width: 200px;
+    width: 100%;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+// ---------- About (teaser) ----------
+
+.about-section {
+    background: var(--surface-bg);
+
+    h2 {
+        color: var(--primary-color);
+        font-weight: 800;
+
+        @media (prefers-color-scheme: dark) {
+            color: var(--text-primary);
+        }
+    }
+
+    p {
+        color: var(--text-secondary);
+        line-height: 1.8;
+        font-size: 1.05rem;
+    }
+
+    img {
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+}
+
+// ---------- "What We Do" carousel theme override ----------
+// The carousel always sits on dark, brightness-dimmed photos, so its
+// caption text/controls stay light regardless of the site's light/
+// dark mode (was an inline <style> block in index.html).
+.bs-theme-override {
+    h5, p {
+        color: #FFFFFF !important;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        filter: none !important;
+    }
+}
+
+// ---------- Events ("What We Do") ----------
+
+.events-section {
+    background: var(--surface-bg-alt);
+
+    h2 {
+        color: var(--primary-color);
+        font-weight: 800;
+        margin-bottom: 3rem;
+
+        @media (prefers-color-scheme: dark) {
+            color: var(--text-primary);
+        }
+    }
+}
+
+.event-card {
+    background: var(--surface-bg);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px var(--shadow-color);
+    transition: all 0.3s ease;
+    border-top: 4px solid transparent;
+    border: 1px solid var(--border-color);
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px var(--shadow-color);
+    }
+
+    h3 {
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+
+        @media (prefers-color-scheme: dark) {
+            color: var(--text-primary);
+        }
+    }
+
+    ul li {
+        color: var(--text-secondary);
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+}
+
+.professional-card {
+    border-top-color: var(--secondary-color);
+
+    .event-icon {
+        color: var(--secondary-color);
+    }
+}
+
+.social-card {
+    border-top-color: var(--accent-color);
+
+    .event-icon {
+        color: var(--accent-color);
+    }
+}
+
+.event-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+// ---------- Gallery ----------
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    height: 300px;
+    cursor: pointer;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+
+    &:hover img {
+        transform: scale(1.1);
+    }
+
+    &:hover .gallery-overlay {
+        opacity: 1;
+    }
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(74, 31, 111, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 15px;
+
+    p {
+        color: white;
+        font-size: 1.3rem;
+        font-weight: 600;
+        text-align: center;
+    }
+}
+
+// ---------- Members (stats teaser) ----------
+
+.members-section {
+    background: var(--surface-bg);
+
+    h2 {
+        color: var(--primary-color);
+        font-weight: 800;
+
+        @media (prefers-color-scheme: dark) {
+            color: var(--text-primary);
+        }
+    }
+}
+
+.member-stat {
+    padding: 1rem 0;
+
+    h3 {
+        font-weight: 800;
+    }
+
+    p {
+        color: var(--text-secondary);
+        margin: 0;
+        font-weight: 400;
+    }
+}
+
+// Count-up target numbers (see initializeStatCounters in js/main.js). Given
+// a fixed width based on the final digit count keeps the layout from
+// jittering as the digits tick up from "0".
+.stat-number {
+    font-variant-numeric: tabular-nums;
+}
+
+// ---------- Rush (teaser) ----------
+
+.rush-section {
+    background: var(--surface-bg-alt);
+
+    h2 {
+        color: var(--primary-color);
+        font-weight: 800;
+
+        @media (prefers-color-scheme: dark) {
+            color: var(--text-primary);
+        }
+    }
+
+    h4 {
+        color: var(--secondary-color);
+    }
+
+    p {
+        color: var(--text-secondary);
+        line-height: 1.8;
+        font-size: 1.05rem;
+    }
+
+    ul li {
+        color: var(--text-secondary);
+    }
+}
+
+// "Join Our Brotherhood" steps the homepage's white/lavender background
+// cycle up a notch here instead of repeating the same alt lavender used by
+// the Events and About sections elsewhere on this page — the plain
+// alternation wasn't a strong enough jump next to "Our Members" (white), so
+// this section instead uses the site's dark accent surface (the same one
+// .about-intro-section uses on the About page), with light text and an
+// accent-gold subheading to match — the same pairing the footer already
+// uses on that same dark-purple background.
+.rush-cta-section {
+    background: var(--surface-bg-strong);
+
+    h2 {
+        color: #fff;
+    }
+
+    h4 {
+        color: var(--accent-color);
+    }
+
+    p,
+    ul li {
+        color: rgba(255, 255, 255, 0.85);
+    }
+}
+
+// ---------- Alumni ----------
+
+.alumni-section {
+    background: var(--surface-bg);
+
+    h2 {
+        color: var(--primary-color);
+        font-weight: 800;
+
+        @media (prefers-color-scheme: dark) {
+            color: var(--text-primary);
+        }
+    }
+
+    p {
+        color: var(--text-secondary);
+        line-height: 1.8;
+        font-size: 1.05rem;
+    }
+}
+
+// ---------- Newsletter ----------
+
+.newsletter-section {
+    background: var(--surface-bg-alt);
+
+    h2 {
+        color: var(--primary-color);
+        font-weight: 800;
+
+        @media (prefers-color-scheme: dark) {
+            color: var(--text-primary);
+        }
+    }
+}
+
+.newsletter-form {
+    input {
+        border: 1px solid var(--border-color);
+        border-radius: 50px 0 0 50px;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        background: var(--surface-bg);
+        color: var(--text-primary);
+
+        &:focus {
+            box-shadow: none;
+            border-color: var(--primary-color);
+            background: var(--surface-bg);
+            color: var(--text-primary);
+        }
+    }
+
+    button {
+        background: linear-gradient(135deg, var(--secondary-color) 0%, #a01829 100%);
+        border: none;
+        border-radius: 0 50px 50px 0;
+        font-weight: 600;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: translateX(3px);
+            box-shadow: 0 5px 15px rgba(196, 30, 58, 0.3);
+        }
+    }
+}

@@ -1,0 +1,44 @@
+{{/*
+  Renders a resized, lazily-loaded <img> for a member/casual photo.
+
+  Member photos come straight off phones — some are several MB at full
+  camera resolution — but the card only ever displays them at a few hundred
+  CSS pixels wide. This resizes the original down to a sane display width
+  and re-encodes it as WebP via Hugo's image pipeline instead of shipping
+  the full-resolution original to the browser (see the "assets" Pipes mount
+  in hugo.toml, which is what makes resources.Get find these files).
+
+  Falls back to the raw file (relURL, unresized) if Hugo can't find/process
+  it — e.g. a format the image pipeline chokes on, or a photo path that
+  isn't covered by that mount (like the default assets/img/sillydog.jpg) —
+  so a bad or out-of-scope photo never breaks the build.
+
+  Call with a dict:
+    {{ partial "member-photo.html" (dict "src" $m.photo "alt" $m.name "class" "member-image") }}
+  "width" (optional, default 500) caps the resized pixel width — comfortably
+  above the ~300px CSS display size for retina screens without shipping
+  full camera resolution.
+*/}}
+{{ $src := .src }}
+{{ $alt := .alt }}
+{{ $class := .class }}
+{{ $maxWidth := .width | default 500 }}
+{{ $relPath := strings.TrimPrefix "assets/" $src }}
+{{ $res := resources.Get $relPath }}
+{{ if $res }}
+  {{/* Some phone photos carry an EXIF Orientation tag (portrait shots are
+       stored sideways at the sensor level, e.g. "Popuri, Praneet.jpg" and
+       "Sannikov, Alex.jpg" are both Orientation=6). Browsers auto-rotate a
+       raw JPEG per that tag, but Hugo's Resize does not — and drops the
+       tag from its output — so resizing straight from $res would ship an
+       image sideways. AutoOrient bakes the correct rotation into the
+       pixels first; must run before Resize, and its own output width/height
+       already reflect the corrected (possibly swapped) orientation. */}}
+  {{ $oriented := $res.Filter images.AutoOrient }}
+  {{ $targetWidth := $maxWidth }}
+  {{ if lt $oriented.Width $maxWidth }}{{ $targetWidth = $oriented.Width }}{{ end }}
+  {{ $out := $oriented.Resize (printf "%dx webp q82" $targetWidth) }}
+  <img src="{{ $out.RelPermalink }}" alt="{{ $alt }}" class="{{ $class }}" loading="lazy" width="{{ $out.Width }}" height="{{ $out.Height }}">
+{{ else }}
+  <img src="{{ $src | relURL }}" alt="{{ $alt }}" class="{{ $class }}" loading="lazy">
+{{ end }}

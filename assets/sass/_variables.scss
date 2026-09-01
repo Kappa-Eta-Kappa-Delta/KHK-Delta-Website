@@ -1,0 +1,52 @@
+// ==========================================
+// DESIGN TOKENS — KHK DELTA CHAPTER
+// Light palette on :root, dark palette both via explicit
+// [data-bs-theme="dark"] (site's own toggle script) and via
+// prefers-color-scheme (system default), matching the behavior
+// that used to live at the top of css/style.css.
+// ==========================================
+
+:root {
+    --primary-color: #4a1f6f;
+    --secondary-color: #c41e3a;
+    --accent-color: #ffc72c;
+    --page-bg: #f7f5fb;
+    --surface-bg: #ffffff;
+    --surface-bg-alt: #e6dcf3;
+    --surface-bg-strong: #2a1545;
+    --text-primary: #212529;
+    --text-secondary: #555d66;
+    --text-muted: #6c757d;
+    --border-color: rgba(74, 31, 111, 0.12);
+    --shadow-color: rgba(20, 16, 35, 0.12);
+    --border-radius: 0.5rem;
+    color-scheme: light;
+}
+
+:root[data-bs-theme="dark"] {
+    --page-bg: #120d1b;
+    --surface-bg: #1a1427;
+    --surface-bg-alt: #2f2247;
+    --surface-bg-strong: #0f0818;
+    --text-primary: #f3edf9;
+    --text-secondary: #c8c0d5;
+    --text-muted: #9d94ab;
+    --border-color: rgba(255, 255, 255, 0.09);
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-bs-theme="light"]) {
+        --page-bg: #120d1b;
+        --surface-bg: #1a1427;
+        --surface-bg-alt: #2f2247;
+        --surface-bg-strong: #0f0818;
+        --text-primary: #f3edf9;
+        --text-secondary: #c8c0d5;
+        --text-muted: #9d94ab;
+        --border-color: rgba(255, 255, 255, 0.09);
+        --shadow-color: rgba(0, 0, 0, 0.4);
+        color-scheme: dark;
+    }
+}

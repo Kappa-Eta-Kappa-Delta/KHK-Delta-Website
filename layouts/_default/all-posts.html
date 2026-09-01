@@ -1,0 +1,31 @@
+{{ define "main" }}
+<main>
+    <div class="container">
+        <section class="news-hero">
+            <a href="/posts/" class="back-to-news-link"><i class="fas fa-arrow-left me-1"></i>Back to News</a>
+            <h1 class="display-5 fw-bold mb-3">All News &amp; Updates</h1>
+            <p class="lead mb-4">Every post from Kappa Eta Kappa, Delta Chapter, newest first.</p>
+        </section>
+
+        {{ $posts := (site.GetPage "posts").Pages.ByDate.Reverse }}
+        {{ if not $posts }}
+        <p class="news-empty">No posts yet &mdash; check back soon!</p>
+        {{ else }}
+        <section id="newsContent" class="pb-5">
+            <div id="allPostsList" class="all-posts-list">
+                {{ range $posts }}
+                <div class="all-posts-row">
+                    <img class="all-posts-row-image" src="{{ .Params.image | relURL }}" alt="{{ .Title }}">
+                    <div class="all-posts-row-content">
+                        <span class="post-date">{{ .Date.Format "January 2, 2006" }}</span>
+                        <h3 class="all-posts-row-title">{{ .Title }}</h3>
+                    </div>
+                    <a class="btn btn-primary catch-up-btn" href="{{ .RelPermalink }}">Catch Up <i class="fas fa-arrow-right ms-1"></i></a>
+                </div>
+                {{ end }}
+            </div>
+        </section>
+        {{ end }}
+    </div>
+</main>
+{{ end }}

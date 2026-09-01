@@ -1,58 +1,144 @@
-{{ define "banner" }}
-{{ partial "banner.html" . }}
-{{ end }}
-
 {{ define "main" }}
+{{ $hero := .Params.hero }}
+{{ $aboutTeaser := .Params.about_teaser }}
+{{ $rushTeaser := .Params.rush_teaser }}
+{{ $alumniTeaser := .Params.alumni_teaser }}
 
-<!-- Main -->
-<div id="main-wrapper">
-	<div class="container">
+<!-- Hero Section -->
+<section id="home" class="hero-section">
+    <div class="container-fluid hero-content">
+        <div class="row align-items-center min-vh-100">
+            <div class="col-lg-6 text-white">
+                <div class="hero-text mx-auto">
+                    <img src="{{ $hero.crest | relURL }}" alt="KHK Crest" class="hero-crest">
+                    <h1 class="display-4 fw-bold mb-4">{{ $hero.heading }}</h1>
+                    <h2 class="h3 mb-4">{{ $hero.subheading }}</h2>
+                    <p class="lead mb-4">{{ $hero.lead }}</p>
+                    <div class="hero-buttons">
+                        <a href="/rush/" class="btn btn-primary btn-lg">Learn About Rush</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center"></div>
+        </div>
+    </div>
+</section>
 
-		<!-- Updates Section -->
-		<section>
-			<header class="major">
-				<h2>Updates</h2>
-			</header>
-			<div class="updates-grid">
-				{{ $posts := first 2 (where .Site.RegularPages "Section" "posts") }}
-				{{ range $posts }}
-				{{ partial "post_card.html" . }}
-				{{ end }}
-			</div>
-			<footer style="display:flex;justify-content:center;">
-				<a href="{{ "/posts/" | relURL }}" class="button big icon fa fa-newspaper-o">Read more</a>
-			</footer>
-		</section>
+<!-- About Section -->
+<section id="about" class="about-section py-5">
+    <div class="container">
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6">
+                <img src="{{ $aboutTeaser.image | relURL }}" alt="{{ $aboutTeaser.image_alt }}" class="img-fluid rounded-3 shadow-lg" loading="lazy">
+            </div>
+            <div class="col-lg-6 ps-lg-5">
+                <h2 class="display-5 fw-bold mb-4">About Kappa Eta Kappa</h2>
+                {{ range $i, $p := .Params.about_teaser.about_paragraphs }}
+                <p class="{{ if eq (add $i 1) (len $.Params.about_teaser.about_paragraphs) }}{{ else }}mb-3{{ end }}">{{ $p }}</p>
+                {{ end }}
+                <a href="/about/" class="btn btn-primary btn-lg">Our Story</a>
+            </div>
+        </div>
+    </div>
+</section>
 
-		<!-- Member Highlights -->
-		<section class="member-highlights">
-			<header class="major">
-				<h2>Member Highlights</h2>
-			</header>
+<!-- Events Section -->
+<section id="events" class="events-section pt-5 bg-light bs-theme-override">
+    <h2 class="display-5 fw-bold text-center mb-5">What We Do</h2>
+    <div id="what-we-do-carousel" class="carousel slide" style="max-height: 500px; overflow: hidden;" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            {{ range $i, $slide := .Params.what_we_do }}
+            <div class="carousel-item{{ if eq $i 0 }} active{{ end }}">
+                <img src="{{ $slide.image | relURL }}" alt="{{ $slide.image_alt }}" class="d-block w-100" style="height: 500px; object-fit: cover; filter: brightness(0.7);" loading="lazy">
+                <div class="carousel-caption text-start d-none d-md-block">
+                    <h5 class="h2">{{ $slide.title }}</h5>
+                    <p>{{ $slide.text }}</p>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#what-we-do-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#what-we-do-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
 
-			{{ $bios := .Site.Data.member_bios }}
-			{{ $ps := .Site.Params }}
+<!-- Members Section -->
+<section id="members" class="members-section py-5">
+    <div class="container">
+        <h2 class="display-5 fw-bold text-center mb-5">Our Members</h2>
+        <p class="lead text-center mb-5">
+            From ambitious freshmen to accomplished seniors and professionals,
+            our members represent the best of UW-Madison's STEM community.
+        </p>
+        <div class="row text-center justify-content-center">
+            {{ range .Params.member_stats }}
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="member-stat">
+                    <h3 class="display-6 fw-bold {{ .color }} stat-number" data-count-to="{{ .number }}">0</h3>
+                    <p class="fs-5">{{ .label }}</p>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+        {{/* TEMP (Temp branch): "View Member Directory" button hidden while
+             /members/ is deactivated. Restore this block to bring it back.
+        <div class="text-center mt-5 pt-4">
+            <a href="{{ .Params.member_directory_url }}" class="btn btn-primary btn-lg">View Member Directory</a>
+        </div>
+        */}}
+    </div>
+</section>
 
-			<div class="leadership-grid">
-				{{ partial "member_card.html" (dict "bios" $bios "role" "President" "id" $ps.President) }}
-				{{ partial "member_card.html" (dict "bios" $bios "role" "Vice President" "id" $ps.Vice_President) }}
-				{{ partial "member_card.html" (dict "bios" $bios "role" "Pledge Trainer" "id" $ps.Pledge_Trainer) }}
-				{{ partial "member_card.html" (dict "bios" $bios "role" "House Steward" "id" $ps.House_Steward) }}
-			</div>
+<!-- Rush Section -->
+<section id="rush" class="rush-section rush-cta-section py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <img src="{{ $rushTeaser.image | relURL }}" alt="{{ $rushTeaser.image_alt }}" class="img-fluid rounded-3 shadow-lg" loading="lazy">
+            </div>
+            <div class="col-lg-6 ps-lg-5">
+                <h2 class="display-5 fw-bold mb-4">Join Our Brotherhood</h2>
+                <p class="mb-3">{{ $rushTeaser.lead }}</p>
+                <p class="mb-3">{{ $rushTeaser.copy }}</p>
+                <h4 class="h5 fw-bold mt-4 mb-3">What to Expect:</h4>
+                <ul class="list-unstyled mb-4">
+                    {{ range $i, $item := $rushTeaser.expect }}
+                    <li class="{{ if eq (add $i 1) (len $rushTeaser.expect) }}{{ else }}mb-2{{ end }}"><i class="fas fa-star text-warning me-2"></i>{{ $item }}</li>
+                    {{ end }}
+                </ul>
+                <a href="/rush/" class="btn btn-primary btn-lg">Rush Information</a>
+            </div>
+        </div>
+    </div>
+</section>
 
-			<div class="order-grid">
-				{{ partial "member_card.html" (dict "bios" $bios "role" "Treasurer" "id" $ps.Treasurer) }}
-				{{ partial "member_card.html" (dict "bios" $bios "role" "Publicity Chair" "id" $ps.Publicity_Chair) }}
-				{{ partial "member_card.html" (dict "bios" $bios "role" "Social Chair" "id" $ps.Social_Chair) }}
-				{{ partial "member_card.html" (dict "bios" $bios "role" "Secretary" "id" $ps.Secretary) }}
-			</div>
+<!-- Alumni Section -->
+<section id="alumni" class="alumni-section py-5">
+    <div class="container">
+        <h2 class="display-5 fw-bold text-center mb-5">Our Alumni</h2>
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6">
+                {{ range $i, $p := $alumniTeaser.paragraphs }}
+                <p class="{{ if eq (add $i 1) (len $alumniTeaser.paragraphs) }}{{ else }}mb-3{{ end }}">{{ $p }}</p>
+                {{ end }}
+            </div>
+            <div class="col-lg-6 text-center">
+                <img src="{{ $alumniTeaser.image | relURL }}" alt="{{ $alumniTeaser.image_alt }}" class="img-fluid rounded-3" loading="lazy">
+            </div>
+        </div>
+        <div class="text-center pt-4">
+            <a href="{{ $alumniTeaser.button_url }}" class="btn btn-primary btn-lg">Visit Delta Alumni Association</a>
+        </div>
+    </div>
+</section>
 
-			<footer style="display:flex;justify-content:center;">
-				<a href="{{ "/members/" | relURL }}" class="button big icon fa fa-users">View all members</a>
-			</footer>
-		</section>
-
-	</div>
-</div>
-
+<!-- Interested in Joining? Sign-up Form (see js/join-form.js) -->
+<div id="join-form"></div>
+<script src="{{ "js/join-form.js" | relURL }}"></script>
 {{ end }}

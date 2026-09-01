@@ -1,0 +1,52 @@
+# About page "Our Alumni Network" belt. Add/remove/reorder entries here —
+# the about page just loops over this list in the order given.
+#
+# photo is optional (site-relative path, e.g. "assets/img/members/Doe, Jane.jpg");
+# leave it blank and the card falls back to a placeholder image.
+#
+# available is optional too — omit it (the default) to show the card, or
+# set `available: false` to keep an incomplete entry in this file without
+# rendering it on the page (used below for entries still missing a photo/quote).
+- name: "Tim Bostanche"
+  pledge_class: "Fall 2019 Pledge Class"
+  position: "Software Engineer @ Google"
+  photo: "assets/img/alumni/Bostanche, Timothy.jpeg"
+  quote: "KHK is intertwined with my college memories so tightly. Almost all of my memories are in someway related to the time I spent in the chapter house or with the brothers/sisters. To this day, about 4 years post grad, most of my friends I keep up with are from this time and from Khk. If you are even slightly inclined to rush, you should. You might just make a few friends for life. "
+- name: "Frank Meng"
+  pledge_class: "Spring 2009 Pledge Class"
+  position: "Product GTM @ Salesforce (ex-Google, ex-MSFT)"
+  photo: "assets/img/alumni/Meng, Frank.JPG"
+  quote: "KHK allowed me to have great social life with other peers that were also going through challenging engineering programs. Your network is what you make of it, and some alumni were gracious enough to help me interview prep."
+- name: "Dev Mehrotra"
+  pledge_class: "Fall 2021 Pledge Class"
+  position: "PhD @ Aarhus University, Denmark"
+  photo: "assets/img/alumni/Mehrotra, Dev.jpg"
+  quote: "KHK isn't just a frat, it's been my home. It's where I found my voice, my people, and a million ways to grow without even realizing it. I’ve seen shy freshmen turn into leaders, and quiet ideas turn into real change, all because this place gives you the space to be your best self."
+- name: "John Oghalai"
+  pledge_class: "Spring 1987 Pledge Class"
+  position: "Professor and Department Chair, Head and Neck Surgery @ University of Southern California"
+  photo: "assets/img/alumni/Oghalai, John.jpg"
+  quote: "It was great to be part of a group of students, all working to learn engineering. I made great friends at KHK. Even though I ultimately transistioned to a career in medicine, I continue to use the engineering, teamwork, and leadership skills I learned at KHK on a daily basis."
+- name: "Karan Kapur"
+  pledge_class: "Spring 2023 Pledge Class"
+  position: "Co-Founder @ Thaw"
+  photo: "assets/img/alumni/Kapur, Karan.jpeg"
+  quote: "I joined KHK because I wanted to find more people in CS with similar interests. My time was really fun and I met some of my best friends in KHK. KHK also helped me become a better leader as I learned a lot while serving as the President and Vice President of the Delta Chapter. As of right now, I am the Vice President of National Executive Council and help with expansion."
+- name: "Arnav Bhardia"
+  pledge_class: "Spring 2020 Pledge Class"
+  position: "Founder, Example Startup"
+  photo: ""
+  quote: "Quote incoming"
+  available: false
+- name: "Neha Talluri"
+  pledge_class: "Fall 2022 Pledge Class"
+  position: "Research Engineer, Example Labs"
+  photo: ""
+  quote: "Quote incoming"
+  available: false
+- name: "Jerry Peplinski"
+  pledge_class: "Spring 2024 Pledge Class"
+  position: "Analyst, Example Financial"
+  photo: ""
+  quote: "Quote incoming"
+  available: false

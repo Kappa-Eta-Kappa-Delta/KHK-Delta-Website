@@ -1,0 +1,64 @@
+{{/*
+  Renders one member card (front + back face). Call with a dict:
+    {{ partial "member-card.html" (dict "member" $m "isExec" true) }}
+  Mirrors js/members-engine.js's old cardHtml()/frontFaceHtml()/
+  backFaceHtml() — same markup, now built server-side from
+  data/members.json instead of client-side from js/members-data.js.
+
+  Front-face "professional" link fields (all optional — omit/null to hide
+  that icon, same as every other field on this card):
+    linkedin/github/website: full URL, e.g. "https://github.com/handle"
+    resume: site-relative path to a PDF, e.g. "assets/resumes/<Last, First - Resume>.pdf"
+            (mounted from assets/ into static/assets/ via hugo.toml, resolved via relURL below)
+
+  Back-face "casual" link fields (optional):
+    instagram/snapchat/tiktok: full URL
+*/}}
+{{ $m := .member }}
+{{ $isExec := .isExec }}
+{{ $casualPhoto := $m.casualPhoto | default "assets/img/sillydog.jpg" }}
+<div class="member-card{{ if $isExec }} executive-board-card h-100{{ end }}" data-member-id="{{ $m.id }}">
+    <div class="member-card-inner">
+        <div class="member-card-face member-card-front">
+            <div class="member-image-wrapper">
+                {{ partial "member-photo.html" (dict "src" $m.photo "alt" $m.name "class" "member-image") }}
+                {{ if or $m.linkedin $m.github $m.website $m.resume }}
+                <div class="member-overlay">
+                    <div class="member-social">
+                        {{ if $m.linkedin }}<a href="{{ $m.linkedin }}" class="social-btn" title="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>{{ end }}
+                        {{ if $m.github }}<a href="{{ $m.github }}" class="social-btn" title="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>{{ end }}
+                        {{ if $m.website }}<a href="{{ $m.website }}" class="social-btn" title="Website" target="_blank" rel="noopener"><i class="fas fa-globe"></i></a>{{ end }}
+                        {{ if $m.resume }}<a href="{{ $m.resume | relURL }}" class="social-btn" title="Resume" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i></a>{{ end }}
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+            <div class="member-info{{ if $m.positionHeld }} text-center{{ end }}">
+                <h3 class="member-name">{{ $m.name }}</h3>
+                {{ if $m.positionHeld }}<p class="member-position">{{ $m.positionHeld }}</p>{{ end }}
+                <p class="member-year-major">{{ $m.year }} &middot; {{ $m.major }}</p>
+                <p class="member-internship">{{ $m.internship }}</p>
+            </div>
+        </div>
+        <div class="member-card-face member-card-back" aria-hidden="true">
+            <div class="member-image-wrapper">
+                {{ partial "member-photo.html" (dict "src" $casualPhoto "alt" (printf "%s (casual photo)" $m.name) "class" "member-image") }}
+                {{ if or $m.instagram $m.snapchat $m.tiktok }}
+                <div class="member-overlay">
+                    <div class="member-social">
+                        {{ if $m.instagram }}<a href="{{ $m.instagram }}" class="social-btn" title="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>{{ end }}
+                        {{ if $m.snapchat }}<a href="{{ $m.snapchat }}" class="social-btn" title="Snapchat" target="_blank" rel="noopener"><i class="fab fa-snapchat"></i></a>{{ end }}
+                        {{ if $m.tiktok }}<a href="{{ $m.tiktok }}" class="social-btn" title="TikTok" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>{{ end }}
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+            <div class="member-info{{ if $isExec }} text-center{{ end }}">
+                <h3 class="member-name">{{ $m.name }}</h3>
+                <p class="member-org">{{ $m.studentOrg }}</p>
+                <p class="member-blurb">{{ $m.blurb }}</p>
+                <p class="member-pledge-meta">Pledged {{ $m.pledgeSemester }}</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,505 @@
+// ==========================================
+// MEMBERS PAGE STYLES — ported from css/members.css +
+// css/members-templated.css (the additive overrides that used to be
+// loaded second, after members.css, are kept second here too so the
+// cascade order — and which rules win — stays identical).
+// ==========================================
+
+// ---------- Header ----------
+
+.members-header {
+    background: linear-gradient(135deg, #4a1f6f 0%, #6b2c8f 100%);
+    color: white;
+    border-bottom: 3px solid #ffc72c;
+
+    @media (max-width: 768px) {
+        padding: 2rem 0;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+        @media (max-width: 768px) {
+            font-size: 2rem;
+        }
+
+        @media (max-width: 576px) {
+            font-size: 1.5rem;
+        }
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+
+        @media (max-width: 768px) {
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 576px) {
+            font-size: 1rem;
+        }
+    }
+}
+
+.members-crest {
+    max-width: 150px;
+    height: auto;
+    animation: fadeIn 0.6s ease-out;
+
+    @media (max-width: 768px) {
+        max-width: 120px;
+    }
+}
+
+// ---------- Grid ----------
+
+.members-section {
+    background: var(--surface-bg-alt);
+    padding: 4rem 0;
+
+    @media (max-width: 576px) {
+        padding: 2rem 0;
+    }
+}
+
+.executive-board-section {
+    background: linear-gradient(180deg, var(--surface-bg) 0%, var(--surface-bg-alt) 100%);
+    padding: 4rem 0 1rem;
+}
+
+.executive-board-lead {
+    color: var(--text-secondary);
+    max-width: 46rem;
+}
+
+.executive-board-grid {
+    margin-top: 0.5rem;
+}
+
+.executive-board-card {
+    border-top: 4px solid var(--primary-color);
+}
+
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+
+    @media (max-width: 1200px) {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1.5rem;
+    }
+
+    @media (max-width: 576px) {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+// ---------- Member card ----------
+
+.member-card {
+    background: var(--surface-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px var(--shadow-color);
+    transition: all 0.3s ease;
+    animation: fadeIn 0.6s ease-out;
+    border: 1px solid var(--border-color);
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 40px var(--shadow-color);
+    }
+
+    @media (max-width: 768px) {
+        margin-bottom: 1rem;
+    }
+
+    // Stagger animation
+    &:nth-child(1) { animation-delay: 0.05s; }
+    &:nth-child(2) { animation-delay: 0.1s; }
+    &:nth-child(3) { animation-delay: 0.15s; }
+    &:nth-child(4) { animation-delay: 0.2s; }
+    &:nth-child(5) { animation-delay: 0.25s; }
+    &:nth-child(6) { animation-delay: 0.3s; }
+    &:nth-child(7) { animation-delay: 0.35s; }
+    &:nth-child(8) { animation-delay: 0.4s; }
+    &:nth-child(n+9) { animation-delay: 0.45s; }
+}
+
+.member-card.flip-enabled {
+    perspective: 1400px;
+    cursor: pointer;
+
+    &:hover {
+        transform: translateY(-8px);
+    }
+}
+
+.member-card-inner {
+    display: grid;
+    min-height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.member-card.is-flipped .member-card-inner {
+    transform: rotateY(180deg);
+}
+
+.member-card-face {
+    grid-area: 1 / 1;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    background: var(--surface-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    min-height: 100%;
+}
+
+// Reset from members-templated.css: the back face is a structural
+// replica of the front (reuses .member-image-wrapper/.member-overlay/
+// .member-info/.member-name), not the circular gradient "badge" style
+// below (that badge styling only applies where members-templated.css
+// isn't loaded — kept here as the base, then reset immediately after).
+.member-card-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(160deg, #4a1f6f 0%, #6b2c8f 55%, #2d112d 100%);
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+
+    @media (max-width: 576px) {
+        padding: 1.25rem;
+    }
+}
+
+.member-back-image {
+    width: unquote("min(180px, 70%)");
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 199, 44, 0.9);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.22);
+}
+
+.member-back-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin: 0;
+
+    @media (max-width: 576px) {
+        font-size: 1.1rem;
+    }
+}
+
+.member-back-blurb {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.92);
+
+    @media (max-width: 576px) {
+        font-size: 0.92rem;
+    }
+}
+
+.member-back-meta {
+    font-size: 0.85rem;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+.member-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    background: linear-gradient(135deg, #4a1f6f 0%, #6b2c8f 100%);
+
+    @media (max-width: 768px) {
+        height: 250px;
+    }
+
+    @media (max-width: 576px) {
+        height: 280px;
+    }
+}
+
+.member-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+
+    .member-card:hover & {
+        transform: scale(1.08);
+    }
+}
+
+.member-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(74, 31, 111, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    .member-card:hover & {
+        opacity: 1;
+    }
+}
+
+.member-social {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 199, 44, 0.15);
+    border-radius: 50%;
+    color: #ffc72c;
+    transition: all 0.3s ease;
+    border: 2px solid #ffc72c;
+    text-decoration: none;
+    font-size: 1.2rem;
+
+    &:hover {
+        background: #ffc72c;
+        color: var(--primary-color);
+        transform: scale(1.15) translateY(-5px);
+    }
+
+    @media (max-width: 576px) {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+
+// ---------- Flip-all button (in-flow version, members.html) ----------
+
+.members-actions {
+    background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+    border-top: 1px solid rgba(74, 31, 111, 0.08);
+
+    @media (prefers-color-scheme: dark) {
+        background: linear-gradient(180deg, #241a35 0%, #120d1b 100%);
+        border-top: none;
+    }
+}
+
+.flip-all-members-btn {
+    background: linear-gradient(135deg, #ffc72c 0%, #ffdb73 100%);
+    border: none;
+    color: #2d112d;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    border-radius: 999px;
+    padding: 0.9rem 1.6rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: linear-gradient(135deg, #ffd44f 0%, #ffe08e 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(196, 171, 30, 0.3);
+    }
+}
+
+// ---------- Member info ----------
+
+.member-info {
+    padding: 1.5rem;
+
+    @media (max-width: 576px) {
+        padding: 1rem;
+    }
+}
+
+.member-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+
+    @media (prefers-color-scheme: dark) {
+        color: var(--text-primary);
+    }
+
+    .member-card:hover & {
+        color: var(--secondary-color);
+    }
+
+    @media (max-width: 576px) {
+        font-size: 1rem;
+    }
+}
+
+.member-position {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+    font-style: italic;
+    line-height: 1.4;
+
+    @media (max-width: 576px) {
+        font-size: 0.9rem;
+    }
+}
+
+.member-pledge {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    background: var(--surface-bg-alt);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: 400;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// ==========================================
+// MEMBERS-TEMPLATED ADDITIVE OVERRIDES
+// (formerly css/members-templated.css, loaded after the rules
+// above — kept last here so it keeps winning the same way)
+// ==========================================
+
+.members-header2 {
+    position: relative;
+}
+
+.moving-wall-title {
+    z-index: 100;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 40px;
+}
+
+// Grayscale filter for light mode (movingWall partial already handles dark mode)
+@media (prefers-color-scheme: light) {
+    .wall-track img {
+        filter: grayscale(100%) opacity(0.7);
+    }
+}
+
+.member-year-major,
+.member-internship {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 0.15rem 0;
+}
+
+.member-internship {
+    color: var(--text-muted);
+}
+
+// Casual (back) face override: reset the circular "badge" styling
+// above back to a plain face that reuses .member-image-wrapper etc.
+.member-card-back {
+    background: var(--surface-bg);
+    color: var(--text-primary);
+    padding: 0;
+    display: block;
+    text-align: left;
+    gap: 0;
+}
+
+.member-org,
+.member-pledge-meta {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 0.15rem 0;
+}
+
+.member-pledge-meta {
+    color: var(--text-muted);
+}
+
+.member-blurb {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    margin: 0.5rem 0;
+}
+
+// Floating "Flip All" button, fixed to the viewport edge (used on
+// members-templated instead of the in-flow .members-actions bar).
+.flip-all-floating {
+    position: fixed;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
+    z-index: 1040;
+    box-shadow: 0 8px 20px var(--shadow-color);
+    // Hidden until the members page script adds .is-visible, once the
+    // Executive Board section (and beyond) is reached.
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    &.is-visible {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    &:hover {
+        transform: translateY(-50%) scale(1.06);
+    }
+
+    @media (max-width: 767.98px) {
+        right: 1rem;
+        padding: 0.7rem 1.1rem;
+        font-size: 0.9rem;
+    }
+
+    @media (max-width: 420px) {
+        span {
+            display: none;
+        }
+    }
+}
