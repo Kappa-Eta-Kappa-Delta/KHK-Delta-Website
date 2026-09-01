@@ -23,15 +23,23 @@
         border-radius: 50px;
         padding: 0.75rem 1.5rem;
         font-size: 1rem;
-        background: var(--surface-bg);
+        // background-color (not the "background" shorthand) so we don't wipe
+        // out Bootstrap's built-in dropdown-arrow background-image on .form-select.
+        background-color: var(--surface-bg);
         color: var(--text-primary);
 
         &:focus {
             box-shadow: none;
             border-color: var(--primary-color);
-            background: var(--surface-bg);
+            background-color: var(--surface-bg);
             color: var(--text-primary);
         }
+    }
+
+    // Leave room so the dropdown arrow (Bootstrap's default .form-select
+    // background-image) doesn't crowd/overlap the selected text.
+    .form-select {
+        padding-right: 2.75rem;
     }
 
     button[type="submit"] {

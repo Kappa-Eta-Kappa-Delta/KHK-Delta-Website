@@ -102,7 +102,7 @@
             return;
         }
         if (!window.isValidEmail(email)) {
-            setStatus(statusEl, "error", "Please enter a valid email address.");
+            setStatus(statusEl, "error", "Please enter a valid email address in the form of text@domain.com.");
             return;
         }
         if (!semester) {
