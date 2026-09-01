@@ -17,8 +17,11 @@
   image: "assets/img/org_fair_table.jpg"
   image_alt: "KHK in 1924"
   text: >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+    After an inquiry from Mr. Welch of the University of Wisconsin regarding installing an electrical
+    fraternity on campus, the Alpha and Beta chapters of KHK informed them of their organziation.
+    In due time,  Mr. George C. K. Johnson of Alpha, Mr. Orville H. Pullen of
+    Alpha, and Mr. Laurence C. Warren of Beta installed Delta chapter at the Madison Club, Madison, 
+    Wisconsin on February 9,1924.
   image_side: "right"
 
 - id: "1930"
@@ -26,8 +29,9 @@
   image: "assets/img/resume_workshop.jpg"
   image_alt: "KHK in 1930"
   text: >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam.
+    The Great Depression marked a difficult period for KHK. Alpha chapter's members dwindled, while Epsilon
+    chapter had issues starting out. Due to disagreements in philosophy Eta chapter was shut down. However,
+    the remaining chapters stayed resilient.
   image_side: "left"
 
 - id: "1945"
@@ -35,22 +39,25 @@
   image: "assets/img/spring_2025_casino_night.jpg"
   image_alt: "KHK in 1945"
   text: >
-    Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
+    Despite its great resilience, KHK nonetheless slowly shrank as World War II continued. Many chapters
+    ended due to loss in their members, with only Beta, Gamma, and Delta chapters remaining active after
+    the war.
   image_side: "right"
 
 - id: "2020"
   summary: "2020: Surviving Covid"
-  image: "assets/img/2025_active_membership.jpg"
+  image: "assets/img/Expo_Group_With_Bucky.jpeg"
   image_alt: "KHK in 2020"
   text: >
-    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-    doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore.
+    With the world shutting down and gatherings being limited, Delta chapter was close to its end during
+    the Covid Era. With record-low membership in decades, it was a tough time for the chapter. However,
+    as lockdown ended, the desire to go out and meet new people was reinvigorated within the people 
+    tremendously, leading to a huge influx in members that kick-started the chapter.
   image_side: "left"
 
 - id: "2026"
   summary: "2026: A Year of Thriving"
-  image: "assets/img/NEC_Spr_26_Delta_Photo.jpeg"
+  image: "assets/img/Expo_Group_With_Bucky.jpeg"
   image_alt: "KHK in 2026"
   text: >
     Across the 2025-2026 Academic Year, KHK Delta's members helped our National

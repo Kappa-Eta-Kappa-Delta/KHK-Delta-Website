@@ -137,6 +137,7 @@ body {
 
 .btn {
     font-weight: 400;
+    border-radius: 50px;
     transition: all 0.3s ease;
 }
 
@@ -301,7 +302,7 @@ body {
         height: auto;
         min-height: 50px;
         padding: 0.65rem 1.75rem;
-        border-radius: var(--bs-border-radius-lg, 0.5rem); // matches .btn-lg (e.g. the hero/join-form buttons)
+        border-radius: 999px;
         font-size: 1.05rem;
         font-weight: 400;
         letter-spacing: 0.3px;

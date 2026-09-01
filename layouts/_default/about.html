@@ -78,7 +78,7 @@
                         </button>
                         <div class="collapse" id="{{ $targetId }}">
                             <div class="timeline-details">
-                                {{ if or (eq .id "2020") (eq .id "2026") }}
+                                {{ if eq .id "2026" }}
                                 <div class="row align-items-center g-4">
                                     <div class="col-md-5{{ if eq .image_side "right" }} order-md-2{{ end }}">
                                         <img src="{{ .image | relURL }}" alt="{{ .image_alt }}" class="img-fluid history-image" loading="lazy">
@@ -106,7 +106,11 @@
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <h2 class="display-5 fw-bold mt-2 mb-4">Our Home</h2>
                     <p class="mb-3">{{ $teaser.lead }}</p>
-                    <p class="mb-4">{{ $teaser.copy }}</p>
+                    {{ range $i, $p := $teaser.copy }}
+                    {{ if $p }}
+                    <p class="{{ if eq (add $i 1) (len $teaser.copy) }}mb-4{{ else }}mb-3{{ end }}">{{ $p }}</p>
+                    {{ end }}
+                    {{ end }}
                     {{/* TEMP (Temp branch): button hidden while /our-home/ is deactivated.
                          Restore this line to bring it back.
                     <a href="{{ $teaser.button_url }}" class="btn btn-primary">{{ $teaser.button_text }}</a>

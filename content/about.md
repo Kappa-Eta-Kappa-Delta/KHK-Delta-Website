@@ -34,8 +34,12 @@ text = "The highest call for any human is to improve the world around them. Stre
 
 [our_home_teaser]
 lead = "Our chapter house at 114 N Orchard St is more than a place to sleep. It is where members live, study, build projects, and spend time together."
-copy = "Explore the full house page to learn more about the history of the house, the current location, and the living spaces reserved exclusively for members."
-image = "assets/img/spring_2025_steak_dinner.jpg"
+copy = [
+  "With 12 rooms and impressively-cheap rent rates, the KHK house makes for a great place to live for our actives. It offers a great opportunity to strengthen your friendships with your fellows, and learn to live together in harmony with others.",
+  "Our home extends far beyond just a place of stay. With an in-house computer lab (equipped with a 3D printer, multiple tools and components for engineers, and a modern, powerful computer), an office, cheap parking on the side and back, and an attic with plentiful storage space, it has enormous utility for any housemate.",
+  "Meanwhile, our basement doubles as both a great venue for parties and having fun, and as our meeting space. With party lights, a projector, and its own dedicated computer, it is a good representation of our 'work hard, play hard' mentality.",
+]
+image = "assets/img/House_Image.png"
 image_alt = "Inside the KHK chapter house"
 button_text = "Visit the Fraternity House page"
 button_url = "/our-home/"
