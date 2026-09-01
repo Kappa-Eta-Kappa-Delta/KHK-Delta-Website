@@ -10,7 +10,7 @@ subheading = "University of Wisconsin-Madison"
 lead = "A co-ed professional fraternity dedicated to fostering excellence in Engineering and Computer Science through professional development, community, and lifelong brotherhood."
 
 [about_teaser]
-image = "assets/img/2025_active_membership.jpg"
+image = "assets/img/Expo_NEC_Spr_2026.jpeg"
 image_alt = "Active Members"
 
 about_paragraphs = [
@@ -20,12 +20,12 @@ about_paragraphs = [
 ]
 
 [[what_we_do]]
-image = "assets/img/resume_workshop.jpg"
+image = "assets/img/Industry_Talk_S26.jpeg"
 image_alt = "Resume Workshop"
 title = "Professional Development"
 text = "With many connections through our alumni network and the guidance they've left behind, we conduct resume workshops, industry talks, networking events and more to empower our members the best they can be for finding satisfying, well-placed careers." 
 [[what_we_do]]
-image = "assets/img/executive_board.jpg"
+image = "assets/img/resume_workshop.jpg"
 image_alt = "Studying Together"
 title = "Academic Support"
 text = "Academic success is an important part of any student's university life. We organize study nights, our own office hour system, and provide many class-based resources to enable our members to perform their best."
@@ -49,7 +49,7 @@ label = "Countries Represented"
 color = "text-warning"
 
 [rush_teaser]
-image = "assets/img/spring_2026_pledge_class.jpg"
+image = "assets/img/Fall_25_NEC.jpeg"
 image_alt = "Pledge Class"
 lead = "Are you interested in professional development, building lifelong friendships, and becoming part of a community dedicated to excellence? KHK might be for you!"
 copy = "Our rush process is designed to help you get to know our members and our values. Whether you're an Engineering, Computer Science, Data Science, or any other major, we encourage you to attend one of our events."
