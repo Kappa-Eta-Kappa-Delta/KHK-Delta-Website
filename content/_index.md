@@ -66,7 +66,7 @@ image_alt = "Alumni Award"
 paragraphs = [
   "Our alumni are spread across the globe, working at leading companies in engineering, software development, and technology.",
   "They continue to support our chapter through mentorship, career guidance, and networking opportunities.",
-  "We aim for KHK to be far beyond just a college experience. We mean for it to establish a lifetime of friendship while letting our member attain the professional success they seek.",
+  "We aim for KHK to be far beyond just a college experience. We mean for it to establish a lifetime of friendship while letting our members attain the professional success they seek.",
 ]
 button_url = "https://daa.khk.org/"
 +++
