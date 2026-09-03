@@ -5,9 +5,10 @@ author = "Matthew Ye"
 image = "assets/img/postImgs/expo-team-magazine-feature.jpeg"
 
 # TEMP (Temp branch): News deactivated, individual post hidden. Remove this block to restore.
-[build]
-  render = false
-  list = false
+# PREVIEW: temporarily commented out to preview locally, restore before deploying.
+# [build]
+#   render = false
+#   list = false
 +++
 
 We're thrilled to share that our chapter's Expo Team was recently featured in a national engineering magazine spotlighting student organizations making an impact in professional development.

@@ -5,9 +5,10 @@ author = "Katie Leitz"
 image = "assets/img/postImgs/nec-spring-delta-recap.jpeg"
 
 # TEMP (Temp branch): News deactivated, individual post hidden. Remove this block to restore.
-[build]
-  render = false
-  list = false
+# PREVIEW: temporarily commented out to preview locally, restore before deploying.
+# [build]
+#   render = false
+#   list = false
 +++
 
 This spring, a group of our members traveled to represent Delta Chapter at the National Executive Council meeting, connecting with sister chapters from across the country.

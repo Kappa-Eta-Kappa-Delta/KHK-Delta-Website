@@ -5,9 +5,10 @@ author = "Olivia Cerro"
 image = "assets/img/postImgs/casino-night-throwback.jpg"
 
 # TEMP (Temp branch): News deactivated, individual post hidden. Remove this block to restore.
-[build]
-  render = false
-  list = false
+# PREVIEW: temporarily commented out to preview locally, restore before deploying.
+# [build]
+#   render = false
+#   list = false
 +++
 
 With finals season behind us, we're looking back at one of our favorite socials of the spring semester — Casino Night!
