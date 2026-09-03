@@ -41,10 +41,11 @@ disableKinds = ["taxonomy", "term"]
 
 # TEMP (Temp branch): Our Home nav link disabled while that page is
 # deactivated. Uncomment to restore.
-# [[menus.main]]
-#   name = "Our Home"
-#   url = "/our-home/"
-#   weight = 30
+# PREVIEW: temporarily uncommented to preview locally, restore before deploying.
+[[menus.main]]
+  name = "Our Home"
+  url = "/our-home/"
+  weight = 30
 
 [[menus.main]]
   name = "Rush Information"
@@ -53,17 +54,18 @@ disableKinds = ["taxonomy", "term"]
 
 # TEMP (Temp branch): Members and News nav links disabled while those
 # pages are deactivated. Uncomment to restore.
-# [[menus.main]]
-#   name = "Members"
-#   url = "/members/"
-#   weight = 50
-#
-# [[menus.main]]
-#   name = "News"
-#   url = "/posts/"
-#   weight = 60
-#   [menus.main.params]
-#     sectionmatch = "posts"
+# PREVIEW: temporarily uncommented to preview locally, restore before deploying.
+[[menus.main]]
+  name = "Members"
+  url = "/members/"
+  weight = 50
+
+[[menus.main]]
+  name = "News"
+  url = "/posts/"
+  weight = 60
+  [menus.main.params]
+    sectionmatch = "posts"
 
 # ------------------------------------------------------------------
 # Module mounts
