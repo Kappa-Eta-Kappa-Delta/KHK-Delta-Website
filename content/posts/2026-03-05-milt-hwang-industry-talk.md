@@ -1,13 +1,13 @@
 +++
-title = "Welcome to KHK Delta Chapter News"
-date = 2026-08-10
-author = "Raghav Jindal"
-image = "assets/img/postImgs/welcome-to-khk-news.jpeg"
+title = "Industry Talk with Milt Hwang, Strategic Marketing Consultant @ Mission MarTech"
+date = 2026-03-05
+author = "Ryan Young"
+image = "assets/img/Industry_Talk_S26.jpeg"
 
 # TEMP (Temp branch): News deactivated, individual post hidden. Remove this block to restore.
-[build]
-  render = false
-  list = false
+# [build]
+#  render = false
+#  list = false
 +++
 
 This is where we'll be sharing updates on everything the chapter has been up to — professional events, socials, service projects, and everything in between.
