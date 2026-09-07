@@ -100,24 +100,25 @@ disableKinds = ["taxonomy", "term"]
     target = "static"
 
   # assets/sass/** -> Hugo Pipes source (resources.Get "sass/main.scss" in head.html).
-  # assets/img/members/** and assets/img/members-casual/** -> also Hugo Pipes
-  # source, so member-photo.html can resources.Get + Resize them (member
-  # photos come straight off phones at up to several MB each; shipped raw
-  # they're the main cause of the multi-second image stall on /members).
+  # assets/img/members/**, assets/img/members-casual/**, and
+  # assets/img/members-formal/** -> also Hugo Pipes source, so
+  # member-photo.html can resources.Get + Resize them (member photos come
+  # straight off phones/scans at up to several MB each; shipped raw they're
+  # the main cause of the multi-second image stall on /members).
   [[module.mounts]]
     source = "assets"
     target = "assets"
-    includeFiles = ["/sass/**", "/img/members/**", "/img/members-casual/**"]
+    includeFiles = ["/sass/**", "/img/members/**", "/img/members-casual/**", "/img/members-formal/**"]
 
   # assets/{fonts,img,logos,svg} -> copied verbatim to /assets/... in
   # the built output, matching the paths content/data already use.
-  # (member/members-casual photos excluded: those are resized via the
-  # Pipes mount above instead, so the multi-MB originals aren't also
+  # (member/members-casual/members-formal photos excluded: those are resized
+  # via the Pipes mount above instead, so the multi-MB originals aren't also
   # shipped raw to /assets/img/...)
   [[module.mounts]]
     source = "assets"
     target = "static/assets"
-    excludeFiles = ["/sass/**", "/img/members/**", "/img/members-casual/**"]
+    excludeFiles = ["/sass/**", "/img/members/**", "/img/members-casual/**", "/img/members-formal/**"]
 
   # Remaining plain-JS behavior (join form, moving wall, card flip
   # interactions) -> served at /js/... unchanged.

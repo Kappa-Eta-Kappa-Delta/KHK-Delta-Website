@@ -2,7 +2,7 @@
   {
     "id": "agrawal-vidit",
     "name": "Vidit Agrawal",
-    "photo": "assets/img/members/Agrawal, Vidit.jpg",
+    "photo": "assets/img/members-formal/Agrawal_Vidit.jpg",
     "pledgeSemester": "Fall 2024",
     "positionHeld": null,
     "status": "alumni",
@@ -23,7 +23,7 @@
   {
     "id": "anasuri-rachith",
     "name": "Rachith Anasuri",
-    "photo": "assets/img/members/Anasuri, Rachith.jpg",
+    "photo": "assets/img/members-formal/Anasuri_Rachith.jpg",
     "pledgeSemester": "Fall 2023",
     "positionHeld": null,
     "status": "active",
@@ -44,7 +44,7 @@
   {
     "id": "bauer-kat",
     "name": "Kat Bauer",
-    "photo": "assets/img/members/Bauer, Kat.jpg",
+    "photo": "assets/img/members-formal/Bauer_Kat.jpg",
     "pledgeSemester": "Fall 2024",
     "positionHeld": "President",
     "status": "active",
@@ -65,7 +65,7 @@
   {
     "id": "bharadia-arnav",
     "name": "Arnav Bharadia",
-    "photo": "assets/img/members/Bharadia, Arnav.jpg",
+    "photo": "assets/img/members-formal/Bharadia_Arnav.jpg",
     "pledgeSemester": "Fall 2024",
     "positionHeld": null,
     "status": "alumni",
@@ -86,7 +86,7 @@
   {
     "id": "birenbaum-tanner",
     "name": "Tanner Birenbaum",
-    "photo": "assets/img/members/Birenbaum, Tanner.jpg",
+    "photo": "assets/img/members-formal/Birenbaum_Tanner.jpg",
     "pledgeSemester": "Spring 2024",
     "positionHeld": null,
     "status": "alumni",
@@ -107,7 +107,7 @@
   {
     "id": "bowers-liliana",
     "name": "Liliana Bowers",
-    "photo": "assets/img/members/Bowers, Liliana.jpg",
+    "photo": "assets/img/members-formal/Bowers_Liliana.jpg",
     "pledgeSemester": "Fall 2023",
     "positionHeld": null,
     "status": "alumni",
@@ -128,7 +128,7 @@
   {
     "id": "brophy-patrick",
     "name": "Patrick Brophy",
-    "photo": "assets/img/members/Brophy, Patrick.jpg",
+    "photo": "assets/img/members-formal/Brophy_Patrick.jpg",
     "pledgeSemester": "Fall 2024",
     "positionHeld": null,
     "status": "alumni",
@@ -149,7 +149,7 @@
   {
     "id": "cerro-olivia",
     "name": "Olivia Cerro",
-    "photo": "assets/img/members/Cerro, Olivia.jpg",
+    "photo": "assets/img/members-formal/Cerro_Olivia.jpg",
     "pledgeSemester": "Fall 2024",
     "positionHeld": null,
     "status": "active",
@@ -170,7 +170,7 @@
   {
     "id": "chang-sean",
     "name": "Sean Chang",
-    "photo": "assets/img/members/Chang, Sean.jpg",
+    "photo": "assets/img/members-formal/Chang_Sean.jpg",
     "pledgeSemester": "Fall 2022",
     "positionHeld": null,
     "status": "active",
@@ -191,7 +191,7 @@
   {
     "id": "chou-angelina",
     "name": "Angelina Chou",
-    "photo": "assets/img/members/Chou, Angelina.jpg",
+    "photo": "assets/img/members-formal/Chou_Angelina.jpg",
     "pledgeSemester": "Spring 2024",
     "positionHeld": null,
     "status": "inactive",
@@ -212,7 +212,7 @@
   {
     "id": "conover-alex",
     "name": "Alex Conover",
-    "photo": "assets/img/members/Conover, Alex.jpg",
+    "photo": "assets/img/members-formal/Conover_Alex.jpg",
     "pledgeSemester": "Spring 2025",
     "positionHeld": "Vice President",
     "status": "active",
@@ -233,7 +233,7 @@
   {
     "id": "cortese-michael",
     "name": "Michael Cortese",
-    "photo": "assets/img/members/Cortese, Michael.jpg",
+    "photo": "assets/img/members-formal/Cortese_Michael.jpg",
     "pledgeSemester": "Spring 2025",
     "positionHeld": null,
     "status": "active",
@@ -254,7 +254,7 @@
   {
     "id": "crowe-james",
     "name": "James Crowe",
-    "photo": "assets/img/members/Crowe, James.jpg",
+    "photo": "assets/img/members-formal/Crowe_James.jpg",
     "pledgeSemester": "Spring 2025",
     "positionHeld": null,
     "status": "active",
@@ -275,7 +275,7 @@
   {
     "id": "deviley-kate",
     "name": "Kate Deviley",
-    "photo": "assets/img/members/Deviley, Kate.jpg",
+    "photo": "assets/img/members-formal/Deviley_Kate.jpg",
     "pledgeSemester": "Fall 2024",
     "positionHeld": null,
     "status": "active",
@@ -296,7 +296,7 @@
   {
     "id": "dhande-kshitij",
     "name": "Kshitij Dhande",
-    "photo": "assets/img/members/Dhande, Kshitij.jpg",
+    "photo": "assets/img/members-formal/Dhande_Kshitij.jpg",
     "pledgeSemester": "Spring 2024",
     "positionHeld": null,
     "status": "alumni",
@@ -317,7 +317,7 @@
   {
     "id": "diener-andrew",
     "name": "Andrew Diener",
-    "photo": "assets/img/members/Diener, Andrew.jpg",
+    "photo": "assets/img/members-formal/Diener_Andrew.jpg",
     "pledgeSemester": "Fall 2024",
     "positionHeld": null,
     "status": "alumni",
@@ -338,7 +338,7 @@
   {
     "id": "erickson-samuel",
     "name": "Samuel Erickson",
-    "photo": "assets/img/members/Erickson, Samuel.jpg",
+    "photo": "assets/img/members-formal/Erickson_Samuel.jpg",
     "pledgeSemester": "Spring 2024",
     "positionHeld": null,
     "status": "alumni",
@@ -359,7 +359,7 @@
   {
     "id": "gupta-abhimanyu",
     "name": "Abhimanyu Gupta",
-    "photo": "assets/img/members/Gupta, Abhimanyu.jpg",
+    "photo": "assets/img/members-formal/Gupta_Abhimanyu.jpg",
     "pledgeSemester": "Fall 2024",
     "positionHeld": null,
     "status": "alumni",
@@ -380,7 +380,7 @@
   {
     "id": "gureno-zoe",
     "name": "Zoe Gureno",
-    "photo": "assets/img/members/Gureno, Zoe.jpg",
+    "photo": "assets/img/members-formal/Gureno_Zoe.jpg",
     "pledgeSemester": "Spring 2025",
     "positionHeld": null,
     "status": "active",
@@ -401,7 +401,7 @@
   {
     "id": "iadarola-vincent",
     "name": "Vincent Iadarola",
-    "photo": "assets/img/members/Iadarola, Vincent.jpg",
+    "photo": "assets/img/members-formal/Iadarola_Vincent.jpg",
     "pledgeSemester": "Fall 2024",
     "positionHeld": null,
     "status": "alumni",
@@ -422,7 +422,7 @@
   {
     "id": "jindal-raghav",
     "name": "Raghav Jindal",
-    "photo": "assets/img/members/Jindal, Raghav.jpg",
+    "photo": "assets/img/members-formal/Jindal_Raghav.jpg",
     "pledgeSemester": "Spring 2024",
     "positionHeld": "Academic Chair",
     "status": "active",
@@ -443,7 +443,7 @@
   {
     "id": "jorenby-parker",
     "name": "Parker Jorenby",
-    "photo": "assets/img/members/Jorenby, Parker.jpg",
+    "photo": "assets/img/members-formal/Jorenby_Parker.jpg",
     "pledgeSemester": "Fall 2024",
     "positionHeld": null,
     "status": "alumni",
@@ -464,7 +464,7 @@
   {
     "id": "kapur-karan",
     "name": "Karan Kapur",
-    "photo": "assets/img/members/Kapur, Karan.jpg",
+    "photo": "assets/img/members-formal/Kapur_Karan.jpg",
     "pledgeSemester": "Spring 2023",
     "positionHeld": null,
     "status": "active",
@@ -485,7 +485,7 @@
   {
     "id": "kemnitz-nicole",
     "name": "Nicole Kemnitz",
-    "photo": "assets/img/members/Kemnitz, Nicole.jpg",
+    "photo": "assets/img/members-formal/Kemnitz_Nicole.jpg",
     "pledgeSemester": "Fall 2024",
     "positionHeld": null,
     "status": "alumni",
@@ -506,7 +506,7 @@
   {
     "id": "kerai-dhruv",
     "name": "Dhruv Kerai",
-    "photo": "assets/img/members/Kerai, Dhruv.jpg",
+    "photo": "assets/img/members-formal/Kerai_Dhruv.jpg",
     "pledgeSemester": "Spring 2024",
     "positionHeld": null,
     "status": "alumni",
@@ -527,7 +527,7 @@
   {
     "id": "klausner-jacob",
     "name": "Jacob Klausner",
-    "photo": "assets/img/members/Klausner, Jacob.jpg",
+    "photo": "assets/img/members-formal/Klausner_Jacob.jpg",
     "pledgeSemester": "Fall 2024",
     "positionHeld": null,
     "status": "alumni",
@@ -548,7 +548,7 @@
   {
     "id": "klein-kellen",
     "name": "Kellen Klein",
-    "photo": "assets/img/members/Klein, Kellen.jpg",
+    "photo": "assets/img/members-formal/Klein_Kellen.jpg",
     "pledgeSemester": "Spring 2024",
     "positionHeld": null,
     "status": "alumni",
@@ -569,7 +569,7 @@
   {
     "id": "klicker-ben",
     "name": "Ben Klicker",
-    "photo": "assets/img/members/Klicker, Ben.jpg",
+    "photo": "assets/img/members-formal/Klicker_Ben.jpg",
     "pledgeSemester": "Fall 2024",
     "positionHeld": null,
     "status": "alumni",
@@ -588,9 +588,30 @@
     "tiktok": null
   },
   {
+    "id": "kotha-shruti",
+    "name": "Shruti Kotha",
+    "photo": "assets/img/members-formal/Kotha_Shruti.jpg",
+    "pledgeSemester": "Spring 2026",
+    "positionHeld": null,
+    "status": "active",
+    "year": "TBD",
+    "major": "TBD",
+    "internship": "TBD",
+    "linkedin": null,
+    "resume": null,
+    "github": null,
+    "website": null,
+    "casualPhoto": null,
+    "studentOrg": "TBD",
+    "blurb": "TBD",
+    "instagram": null,
+    "snapchat": null,
+    "tiktok": null
+  },
+  {
     "id": "kuhse-finn",
     "name": "Finn Kuhse",
-    "photo": "assets/img/members/Kuhse, Finn.jpg",
+    "photo": "assets/img/members-formal/Kuhse_Finn.jpg",
     "pledgeSemester": "Spring 2024",
     "positionHeld": null,
     "status": "active",
@@ -611,7 +632,7 @@
   {
     "id": "kujava-mckenzie",
     "name": "McKenzie Kujava",
-    "photo": "assets/img/members/Kujava, McKenzie.jpg",
+    "photo": "assets/img/members-formal/Kujava_McKenzie.jpg",
     "pledgeSemester": "Fall 2024",
     "positionHeld": null,
     "status": "alumni",
@@ -632,7 +653,7 @@
   {
     "id": "lamb-richard",
     "name": "Richard Lamb",
-    "photo": "assets/img/members/Lamb, Richard.jpg",
+    "photo": "assets/img/members-formal/Lamb_Richard.jpg",
     "pledgeSemester": "Fall 2024",
     "positionHeld": null,
     "status": "active",
@@ -653,7 +674,7 @@
   {
     "id": "lawry-hunter",
     "name": "Hunter Lawry",
-    "photo": "assets/img/members/Lawry, Hunter.jpg",
+    "photo": "assets/img/members-formal/Lawry_Hunter.jpg",
     "pledgeSemester": "Spring 2024",
     "positionHeld": null,
     "status": "active",
@@ -674,7 +695,7 @@
   {
     "id": "leitz-katie",
     "name": "Katie Leitz",
-    "photo": "assets/img/members/Leitz, Katie.jpg",
+    "photo": "assets/img/members-formal/Leitz_Katie.jpg",
     "pledgeSemester": "Fall 2025",
     "positionHeld": "Publicity Chair",
     "status": "active",
@@ -695,7 +716,7 @@
   {
     "id": "malpani-rishit",
     "name": "Rishit Malpani",
-    "photo": "assets/img/members/Malpani, Rishit.jpg",
+    "photo": "assets/img/members-formal/Malpani_Rishit.jpg",
     "pledgeSemester": "Fall 2023",
     "positionHeld": null,
     "status": "active",
@@ -716,7 +737,7 @@
   {
     "id": "mavilla-jasmy",
     "name": "Jasmy Mavilla",
-    "photo": "assets/img/members/Mavilla, Jasmy.jpg",
+    "photo": "assets/img/members-formal/Mavilla_Jasmy.jpg",
     "pledgeSemester": "Spring 2025",
     "positionHeld": null,
     "status": "active",
@@ -737,7 +758,7 @@
   {
     "id": "mehrotra-dev",
     "name": "Dev Mehrotra",
-    "photo": "assets/img/members/Mehrotra, Dev.jpg",
+    "photo": "assets/img/members-formal/Mehrotra_Dev.jpg",
     "pledgeSemester": "Spring 2024",
     "positionHeld": null,
     "status": "alumni",
@@ -758,7 +779,7 @@
   {
     "id": "menge-kristen",
     "name": "Kristen Menge",
-    "photo": "assets/img/members/Menge, Kristen.jpg",
+    "photo": "assets/img/members-formal/Menge_Kristen.jpg",
     "pledgeSemester": "Fall 2024",
     "positionHeld": null,
     "status": "alumni",
@@ -779,7 +800,7 @@
   {
     "id": "mettu-abhay",
     "name": "Abhay Mettu",
-    "photo": "assets/img/members/Mettu, Abhay.jpg",
+    "photo": "assets/img/members-formal/Mettu_Abhay.jpg",
     "pledgeSemester": "Spring 2024",
     "positionHeld": null,
     "status": "alumni",
@@ -800,7 +821,7 @@
   {
     "id": "mohammed-usman",
     "name": "Usman Mohammed",
-    "photo": "assets/img/members/Mohammed, Usman.jpg",
+    "photo": "assets/img/members-formal/Mohammed_Usman.jpg",
     "pledgeSemester": "Spring 2025",
     "positionHeld": null,
     "status": "active",
@@ -821,7 +842,7 @@
   {
     "id": "novak-nathan",
     "name": "Nathan Novak",
-    "photo": "assets/img/members/Novak, Nathan.jpg",
+    "photo": "assets/img/members-formal/Novak_Nathan.jpg",
     "pledgeSemester": "Spring 2025",
     "positionHeld": null,
     "status": "active",
@@ -842,7 +863,7 @@
   {
     "id": "o-leary-brendan",
     "name": "Brendan O'Leary",
-    "photo": "assets/img/members/O'Leary, Brendan.jpg",
+    "photo": "assets/img/members-formal/O'Leary_Brendan.jpg",
     "pledgeSemester": "Fall 2022",
     "positionHeld": null,
     "status": "active",
@@ -863,7 +884,7 @@
   {
     "id": "olson-scarlett",
     "name": "Scarlett Olson",
-    "photo": "assets/img/members/Olson, Scarlett.jpg",
+    "photo": "assets/img/members-formal/Olson_Scarlett.jpg",
     "pledgeSemester": "Spring 2024",
     "positionHeld": null,
     "status": "alumni",
@@ -884,7 +905,7 @@
   {
     "id": "park-kevin",
     "name": "Kevin Park",
-    "photo": "assets/img/members/Park, Kevin.jpg",
+    "photo": "assets/img/members-formal/Park_Kevin.jpg",
     "pledgeSemester": "Fall 2023",
     "positionHeld": "Treasurer",
     "status": "active",
@@ -905,7 +926,7 @@
   {
     "id": "patra-krishnang",
     "name": "Krishnang Patra",
-    "photo": "assets/img/members/Patra, Krishnang.jpg",
+    "photo": "assets/img/members-formal/Patra_Krishnang.jpg",
     "pledgeSemester": "Fall 2024",
     "positionHeld": null,
     "status": "active",
@@ -926,7 +947,7 @@
   {
     "id": "pietenpol-lexi",
     "name": "Lexi Pietenpol",
-    "photo": "assets/img/members/Pietenpol, Lexi.jpg",
+    "photo": "assets/img/members-formal/Pietenpol_Lexi.jpg",
     "pledgeSemester": "Spring 2024",
     "positionHeld": null,
     "status": "active",
@@ -947,7 +968,7 @@
   {
     "id": "race-ethan",
     "name": "Ethan Race",
-    "photo": "assets/img/members/Race, Ethan.jpg",
+    "photo": "assets/img/members-formal/Race_Ethan.jpg",
     "pledgeSemester": "Spring 2024",
     "positionHeld": "Pledge Trainer",
     "status": "active",
@@ -968,7 +989,7 @@
   {
     "id": "richard-tyler",
     "name": "Tyler Richard",
-    "photo": "assets/img/members/Richard, Tyler.jpg",
+    "photo": "assets/img/members-formal/Richard_Tyler.jpg",
     "pledgeSemester": "Fall 2024",
     "positionHeld": null,
     "status": "alumni",
@@ -989,7 +1010,7 @@
   {
     "id": "rollins-jack",
     "name": "Jack Rollins",
-    "photo": "assets/img/members/Rollins, Jack.jpg",
+    "photo": "assets/img/members-formal/Rollins_Jack.jpg",
     "pledgeSemester": "Spring 2024",
     "positionHeld": null,
     "status": "alumni",
@@ -1010,7 +1031,7 @@
   {
     "id": "sandoval-daniel",
     "name": "Daniel Sandoval",
-    "photo": "assets/img/members/Sandoval, Daniel.jpg",
+    "photo": "assets/img/members-formal/Sandoval_Daniel.jpg",
     "pledgeSemester": "Fall 2023",
     "positionHeld": null,
     "status": "active",
@@ -1031,7 +1052,7 @@
   {
     "id": "schwarz-max",
     "name": "Max Schwarz",
-    "photo": "assets/img/members/Schwarz, Max.jpg",
+    "photo": "assets/img/members-formal/Schwarz_Max.jpg",
     "pledgeSemester": "Spring 2026",
     "positionHeld": null,
     "status": "alumni",
@@ -1052,7 +1073,7 @@
   {
     "id": "schwarz-max-2",
     "name": "Max Schwarz",
-    "photo": "assets/img/members/Schwarz, Max.jpg",
+    "photo": "assets/img/members-formal/Schwarz_Max.jpg",
     "pledgeSemester": "Spring 2024",
     "positionHeld": null,
     "status": "alumni",
@@ -1073,7 +1094,7 @@
   {
     "id": "skarabot-eva",
     "name": "Eva Skarabot",
-    "photo": "assets/img/members/Skarabot, Eva.jpg",
+    "photo": "assets/img/members-formal/Skarabot_Eva.jpg",
     "pledgeSemester": "Spring 2025",
     "positionHeld": null,
     "status": "active",
@@ -1094,7 +1115,7 @@
   {
     "id": "tabachnick-rex",
     "name": "Rex Tabachnick",
-    "photo": "assets/img/members/Tabachnick, Rex.jpg",
+    "photo": "assets/img/members-formal/Tabachnick_Rex.jpg",
     "pledgeSemester": "Spring 2025",
     "positionHeld": null,
     "status": "active",
@@ -1115,7 +1136,7 @@
   {
     "id": "talluri-neha",
     "name": "Neha Talluri",
-    "photo": "assets/img/members/Talluri, Neha.jpg",
+    "photo": "assets/img/members-formal/Talluri_Neha.jpg",
     "pledgeSemester": "Fall 2021",
     "positionHeld": null,
     "status": "active",
@@ -1136,7 +1157,7 @@
   {
     "id": "tobin-william",
     "name": "William Tobin",
-    "photo": "assets/img/members/Tobin, William.jpg",
+    "photo": "assets/img/members-formal/Tobin_William.jpg",
     "pledgeSemester": "Spring 2024",
     "positionHeld": null,
     "status": "alumni",
@@ -1157,7 +1178,7 @@
   {
     "id": "upson-brock",
     "name": "Brock Upson",
-    "photo": "assets/img/members/Upson, Brock.jpg",
+    "photo": "assets/img/members-formal/Upson_Brock.jpg",
     "pledgeSemester": "Spring 2023",
     "positionHeld": null,
     "status": "active",
@@ -1178,7 +1199,7 @@
   {
     "id": "woo-john",
     "name": "John Woo",
-    "photo": "assets/img/members/Woo, John.jpg",
+    "photo": "assets/img/members-formal/Woo_John.jpg",
     "pledgeSemester": "Spring 2025",
     "positionHeld": null,
     "status": "active",
@@ -1199,7 +1220,7 @@
   {
     "id": "ye-matthew",
     "name": "Matthew Ye",
-    "photo": "assets/img/members/Ye, Matthew.jpg",
+    "photo": "assets/img/members-formal/Ye_Matthew.jpg",
     "pledgeSemester": "Spring 2024",
     "positionHeld": null,
     "status": "active",
@@ -1220,7 +1241,7 @@
   {
     "id": "young-ryan",
     "name": "Ryan Young",
-    "photo": "assets/img/members/Young, Ryan.jpg",
+    "photo": "assets/img/members-formal/Young_Ryan.jpg",
     "pledgeSemester": "Fall 2023",
     "positionHeld": "Industry Chair",
     "status": "active",
@@ -1241,7 +1262,7 @@
   {
     "id": "zimmerman-daniel",
     "name": "Daniel Zimmerman",
-    "photo": "assets/img/members/Zimmerman, Daniel.jpg",
+    "photo": "assets/img/members-formal/Zimmerman_Daniel.jpg",
     "pledgeSemester": "Fall 2024",
     "positionHeld": null,
     "status": "alumni",
@@ -1262,7 +1283,7 @@
   {
     "id": "zimmerman-sheridan",
     "name": "Sheridan Zimmerman",
-    "photo": "assets/img/members/Zimmerman, Sheridan.jpg",
+    "photo": "assets/img/members-formal/Zimmerman_Sheridan.jpg",
     "pledgeSemester": "Spring 2024",
     "positionHeld": null,
     "status": "alumni",
@@ -1283,7 +1304,7 @@
   {
     "id": "popuri-praneet",
     "name": "Praneet Popuri",
-    "photo": "assets/img/members/Popuri, Praneet.jpg",
+    "photo": "assets/img/members-formal/Popuri_Praneet.jpg",
     "pledgeSemester": "Spring 2024",
     "positionHeld": "Social Chair",
     "status": "active",
@@ -1304,7 +1325,7 @@
   {
     "id": "macdonald-owen",
     "name": "Owen Macdonald",
-    "photo": "assets/svg/crest.svg",
+    "photo": "assets/img/members-formal/Macdonald_Owen.jpg",
     "pledgeSemester": "Fall 2024",
     "positionHeld": null,
     "status": "active",
@@ -1346,7 +1367,7 @@
   {
     "id": "huhn-will",
     "name": "Will Huhn",
-    "photo": "assets/img/members/Huhn, Will.jpg",
+    "photo": "assets/img/members-formal/Huhn_Will.jpg",
     "pledgeSemester": "Fall 2024",
     "positionHeld": null,
     "status": "active",
@@ -1367,7 +1388,7 @@
   {
     "id": "kazanov-daniel",
     "name": "Daniel Kazanov",
-    "photo": "assets/svg/crest.svg",
+    "photo": "assets/img/members-formal/Kazanov_Daniel.jpg",
     "pledgeSemester": "Fall 2025",
     "positionHeld": null,
     "status": "active",
@@ -1388,7 +1409,7 @@
   {
     "id": "lisle-isabella",
     "name": "Isabella Lisle",
-    "photo": "assets/svg/crest.svg",
+    "photo": "assets/img/members-formal/Lisle_Isabella.jpg",
     "pledgeSemester": "Fall 2025",
     "positionHeld": null,
     "status": "active",
@@ -1409,7 +1430,7 @@
   {
     "id": "desilver-james",
     "name": "James DeSilver",
-    "photo": "assets/img/members/Desilver, James.jpeg",
+    "photo": "assets/img/members-formal/DeSilver_James.jpg",
     "pledgeSemester": "Fall 2025",
     "positionHeld": "Secretary",
     "status": "active",
@@ -1430,7 +1451,7 @@
   {
     "id": "tseng-kevin",
     "name": "Kevin Tseng",
-    "photo": "assets/img/members/Tseng, Kevin.jpeg",
+    "photo": "assets/img/members-formal/Tseng_Kevin.jpg",
     "pledgeSemester": "Fall 2025",
     "positionHeld": null,
     "status": "active",
@@ -1451,7 +1472,7 @@
   {
     "id": "zhang-kevin",
     "name": "Kevin Zhang",
-    "photo": "assets/img/members/Zhang, Kevin.jpeg",
+    "photo": "assets/img/members-formal/Zhang_Kevin.jpg",
     "pledgeSemester": "Fall 2025",
     "positionHeld": null,
     "status": "active",
@@ -1472,7 +1493,7 @@
   {
     "id": "conover-logan",
     "name": "Logan Conover",
-    "photo": "assets/img/members/Conover, Logan.jpg",
+    "photo": "assets/img/members-formal/Conover_Logan.jpg",
     "pledgeSemester": "Fall 2025",
     "positionHeld": null,
     "status": "active",
@@ -1493,7 +1514,7 @@
   {
     "id": "jordan-luke",
     "name": "Luke Jordan",
-    "photo": null,
+    "photo": "assets/img/members-formal/Jordan_Luke.jpg",
     "pledgeSemester": "Fall 2025",
     "positionHeld": null,
     "status": "active",
@@ -1514,7 +1535,7 @@
   {
     "id": "lin-steve",
     "name": "Steve Lin",
-    "photo": "assets/svg/crest.svg",
+    "photo": "assets/img/members-formal/Lin_Steve.jpg",
     "pledgeSemester": "Fall 2025",
     "positionHeld": null,
     "status": "active",
@@ -1535,7 +1556,7 @@
   {
     "id": "borse-aishwarya",
     "name": "Aishwarya Borse",
-    "photo": "assets/svg/crest.svg",
+    "photo": "assets/img/members-formal/Borse_Aishwarya.jpg",
     "pledgeSemester": "Spring 2026",
     "positionHeld": null,
     "status": "active",
@@ -1556,7 +1577,7 @@
   {
     "id": "hein-amelia",
     "name": "Amelia Hein",
-    "photo": "assets/svg/crest.svg",
+    "photo": "assets/img/members-formal/Hein_Amelia.jpg",
     "pledgeSemester": "Spring 2026",
     "positionHeld": null,
     "status": "active",
@@ -1577,7 +1598,7 @@
   {
     "id": "wendling-cecil",
     "name": "Cecil Wendling",
-    "photo": "assets/svg/crest.svg",
+    "photo": "assets/img/members-formal/Wendling_Cecil.jpg",
     "pledgeSemester": "Spring 2026",
     "positionHeld": null,
     "status": "active",
@@ -1598,7 +1619,7 @@
   {
     "id": "pecht-charlie",
     "name": "Charlie Pecht",
-    "photo": "assets/svg/crest.svg",
+    "photo": "assets/img/members-formal/Pecht_Charlie.jpg",
     "pledgeSemester": "Spring 2026",
     "positionHeld": null,
     "status": "active",
@@ -1640,7 +1661,7 @@
   {
     "id": "rashid-raza",
     "name": "Raza Rashid",
-    "photo": "assets/svg/crest.svg",
+    "photo": "assets/img/members-formal/Rashid_Raza.jpg",
     "pledgeSemester": "Spring 2026",
     "positionHeld": null,
     "status": "active",
@@ -1661,7 +1682,7 @@
   {
     "id": "dalpe-tyler",
     "name": "Tyler Dalpe",
-    "photo": "assets/svg/crest.svg",
+    "photo": "assets/img/members-formal/Dalpe_Tyler.jpg",
     "pledgeSemester": "Spring 2026",
     "positionHeld": null,
     "status": "active",
