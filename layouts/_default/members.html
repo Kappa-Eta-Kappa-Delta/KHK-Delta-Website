@@ -4,7 +4,7 @@
   Executive Board section, not just an allow-list — mirrors
   js/members-engine.js's old EXEC_POSITIONS constant.
 */}}
-{{ $execPositions := slice "President" "Vice President" "Treasurer" "Secretary" "Pledge Trainer" "Social Chair" "Publicity Chair" "Academic Chair" }}
+{{ $execPositions := slice "President" "Vice President" "Treasurer" "Secretary" "Pledge Trainer" "Social Chair" "Publicity Chair" "Industry Chair" }}
 
 {{ $activeMembers := where site.Data.members "status" "active" }}
 
@@ -58,7 +58,7 @@
     <div class="container">
         <div class="section-heading text-center mb-5">
             <span class="section-kicker text-dark">Leadership</span>
-            <h2 class="display-6 fw-bold mt-2 mb-3">Executive Board</h2>
+            <h2 class="display-6 fw-bold mt-2 mb-3">Officers</h2>
             <p class="lead mx-auto executive-board-lead">{{ .Params.executive_board_lead }}</p>
         </div>
         <div class="row g-4 justify-content-center executive-board-grid" id="executiveBoardGrid">
