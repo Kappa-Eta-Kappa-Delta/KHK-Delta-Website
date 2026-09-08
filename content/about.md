@@ -30,7 +30,7 @@ text = "Leadership is not just a title. It is taking initiative, being unafraid 
 [[values]]
 icon = "fas fa-hand-holding-heart"
 title = "Service as our Greatest Call"
-text = "The greatest call for any human is to improve the world around them. Strengthened by our bonds, and tempered by our practice, we seek to make this world a better place than when we first came into it."
+text = "The greatest call for any human is to improve the world around them. Strengthened by our bonds and tempered by our practice, we seek to make this world a better place than when we first came into it."
 
 [our_home_teaser]
 lead = "Our chapter house at 114 N Orchard St is more than a place to sleep. It is where members live, study, build projects, and spend time together."
