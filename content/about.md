@@ -29,7 +29,7 @@ title = "Cultivating Leadership"
 text = "Leadership is not just a title. It is taking initiative, being unafraid of challenge, serving others, and rallying together people for a cause greater than themselves. KHK believes in empowering all of its members to be inspiring leaders."
 [[values]]
 icon = "fas fa-hand-holding-heart"
-title = "Service as our Greatest Call"
+title = "Service"
 text = "The greatest call for any human is to improve the world around them. Strengthened by our bonds and tempered by our practice, we seek to make this world a better place than when we first came into it."
 
 [our_home_teaser]
