@@ -14,7 +14,7 @@ mission = "We create an environment that fosters technical excellence, leadershi
 [[values]]
 icon = "fas fa-people-group"
 title = "Lifelong Community"
-text = "The bonds between our members are the most important part of our organization. Their long-lasting friendships make it such that they never feel alone and no goal feels out of reach. Creating this sense of belonging is not a consequence of being part of KHK, but rather one of its core tenets."
+text = "The bonds between our members are the most important part of our organization. Their long-lasting friendships make it such that they always feel supported and no goal feels out of reach. Creating this sense of belonging is one of the core tenets of KHK."
 [[values]]
 icon = "fas fa-award"
 title = "Pursuing Excellence"
@@ -22,7 +22,7 @@ text = "To change the world, one must sharpen their mind and dedicate themselves
 [[values]]
 icon = "fas fa-binoculars"
 title = "Foresight"
-text = "The future is subject to not only our own actions, but also to the actions of those who come after. As both individual people and those part of the KHK community, we think not only of the past and present, but of the future and all that comes with it, and seek to mentor our juniors who will take up the mantle from us."
+text = "The future is subject to not only our own actions, but also to the actions of those who come after. As both individual people and those part of the KHK community, we think not only of the past and present, but of the future and all that comes with it. We mentor our juniors to uphold the same standards."
 [[values]]
 icon = "fas fa-star"
 title = "Cultivating Leadership"
@@ -30,7 +30,7 @@ text = "Leadership is not just a title. It is taking initiative, being unafraid 
 [[values]]
 icon = "fas fa-hand-holding-heart"
 title = "Service as our Greatest Call"
-text = "The highest call for any human is to improve the world around them. Strengthened by our bonds, tempered by our practice, prepared by our foresight, and experiencing the pressures of leadership, we seek to make this world a better place than when we first came into it."
+text = "The greatest call for any human is to improve the world around them. Strengthened by our bonds, and tempered by our practice, we seek to make this world a better place than when we first came into it."
 
 [our_home_teaser]
 lead = "Our chapter house at 114 N Orchard St is more than a place to sleep. It is where members live, study, build projects, and spend time together."
