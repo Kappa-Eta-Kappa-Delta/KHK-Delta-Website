@@ -3,10 +3,9 @@ title = 'Fraternity House'
 layout = 'our-home'
 
 # TEMP (Temp branch): page deactivated. Remove this block to restore.
-# PREVIEW: temporarily commented out to preview locally, restore before deploying.
-# [build]
-#   render = false
-#   list = false
+[build]
+  render = false
+  list = false
 
 [hero]
 kicker = "Our Home"

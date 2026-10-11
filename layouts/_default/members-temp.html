@@ -1,0 +1,90 @@
+{{ define "main" }}
+{{/*
+  TEMP: simplified copy of members.html — single-face cards
+  (member-card-temp.html), no flip, and minus anyone listed in this
+  page's `exclude_names` front matter (content/members-temp.md).
+
+  Order here is also the left-to-right display order of the
+  Executive Board section, not just an allow-list.
+*/}}
+{{ $execPositions := slice "President" "Vice President" "Treasurer" "Secretary" "Pledge Trainer" "Social Chair" "Publicity Chair" "Industry Chair" }}
+
+{{ $excludeNames := .Params.exclude_names | default slice }}
+
+{{ $activeMembers := slice }}
+{{ range where site.Data.members "status" "active" }}
+    {{ if not (in $excludeNames .name) }}
+        {{ $activeMembers = $activeMembers | append . }}
+    {{ end }}
+{{ end }}
+
+{{/* One member per position, in EXEC_POSITIONS order (not sorted by name/id). */}}
+{{ $execMembers := slice }}
+{{ range $execPositions }}
+    {{ $match := index (where $activeMembers "positionHeld" .) 0 }}
+    {{ if $match }}
+        {{ $execMembers = $execMembers | append $match }}
+    {{ end }}
+{{ end }}
+
+{{/* Everyone else, alphabetical by id (last-first slug) so a new entry
+     can be pasted anywhere in data/members.json and still land in the
+     right spot here. */}}
+{{ $regularMembers := slice }}
+{{ range $activeMembers }}
+    {{ if not (in $execPositions .positionHeld) }}
+        {{ $regularMembers = $regularMembers | append . }}
+    {{ end }}
+{{ end }}
+{{ $regularMembers = sort $regularMembers "id" }}
+
+<!-- Header Section: animated employer/member-logo wall -->
+<section class="members-header2">
+    <div class="wall-container my-5">
+        <div class="wall-track"></div>
+        <div class="wall-track"></div>
+        <div class="wall-track"></div>
+        <div class="wall-track"></div>
+    </div>
+    {{ $employers := slice }}
+    {{ range site.Data.employers }}
+        {{ $employers = $employers | append (dict "src" (.src | relURL) "alt" .alt) }}
+    {{ end }}
+    <script>window.KHK_EMPLOYERS = {{ $employers | jsonify | safeJS }};</script>
+    <script src="{{ "js/movingWall.js" | relURL }}"></script>
+    <div class="text-center moving-wall-title">
+        <h1 class="display-4 fw-bold text-white">{{ .Params.hero_heading }}</h1>
+        <p class="lead text-white">{{ .Params.hero_lead }}</p>
+    </div>
+</section>
+
+<!-- Executive Board Section -->
+<section class="executive-board-section py-5">
+    <div class="container">
+        <div class="section-heading text-center mb-5">
+            <h2 class="display-6 fw-bold mt-2 mb-3">Leadership</h2>
+            <p class="lead mx-auto executive-board-lead">{{ .Params.executive_board_lead }}</p>
+        </div>
+        <div class="row g-4 justify-content-center executive-board-grid" id="executiveBoardGrid">
+            {{ range $execMembers }}
+            <div class="col-sm-6 col-lg-3">
+                {{ partial "member-card-temp.html" (dict "member" . "isExec" true) }}
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<!-- Members Grid -->
+<section class="members-section pt-0">
+    <hr class="mx-auto mt-0 mb-5" style="width: 100px; border-top: 3px solid #343a40;">
+    <div class="container pb-5">
+        <h2 class="display-6 fw-bold text-center mb-5">Actives</h2>
+        <div class="members-grid" id="membersGrid">
+            {{ range $regularMembers }}
+            {{ partial "member-card-temp.html" (dict "member" . "isExec" false) }}
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}
