@@ -1,8 +1,9 @@
 {{ define "main" }}
 {{/*
   TEMP: simplified copy of members.html — single-face cards
-  (member-card-temp.html), no flip, and minus anyone listed in this
-  page's `exclude_names` front matter (content/members-temp.md).
+  (member-card-temp.html), no flip, no logo-wall header, and minus
+  anyone listed in this page's `exclude_names` front matter
+  (content/members-temp.md).
 
   Order here is also the left-to-right display order of the
   Executive Board section, not just an allow-list.
@@ -37,26 +38,6 @@
     {{ end }}
 {{ end }}
 {{ $regularMembers = sort $regularMembers "id" }}
-
-<!-- Header Section: animated employer/member-logo wall -->
-<section class="members-header2">
-    <div class="wall-container my-5">
-        <div class="wall-track"></div>
-        <div class="wall-track"></div>
-        <div class="wall-track"></div>
-        <div class="wall-track"></div>
-    </div>
-    {{ $employers := slice }}
-    {{ range site.Data.employers }}
-        {{ $employers = $employers | append (dict "src" (.src | relURL) "alt" .alt) }}
-    {{ end }}
-    <script>window.KHK_EMPLOYERS = {{ $employers | jsonify | safeJS }};</script>
-    <script src="{{ "js/movingWall.js" | relURL }}"></script>
-    <div class="text-center moving-wall-title">
-        <h1 class="display-4 fw-bold text-white">{{ .Params.hero_heading }}</h1>
-        <p class="lead text-white">{{ .Params.hero_lead }}</p>
-    </div>
-</section>
 
 <!-- Executive Board Section -->
 <section class="executive-board-section py-5">

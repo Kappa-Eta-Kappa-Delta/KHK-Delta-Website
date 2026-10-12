@@ -51,12 +51,12 @@ disableKinds = ["taxonomy", "term"]
   url = "/rush/"
   weight = 40
 
-# TEMP (Temp branch): Members nav link points at the simplified
-# /members-temp/ page while the full Members page is deactivated.
-# Change url back to "/members/" to restore.
+# TEMP (Temp branch): /members/ is currently served by the simplified
+# content/members-temp.md while the full Members page (content/members.md)
+# is deactivated. No change needed here when restoring it.
 [[menus.main]]
   name = "Members"
-  url = "/members-temp/"
+  url = "/members/"
   weight = 50
 
 [[menus.main]]

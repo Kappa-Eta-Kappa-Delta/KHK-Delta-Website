@@ -3,10 +3,11 @@ title = 'Members'
 layout = 'members-temp'
 
 # TEMP: simplified stand-in for content/members.md (single-face cards,
-# no flip) while that page is deactivated.
+# no flip) while that page is deactivated. Served at /members/ in its
+# place; remove this `url` (or this file) when restoring the full page,
+# or the two will collide.
+url = "/members/"
 
-hero_heading = "Meet Our Members"
-hero_lead = "The talented individuals who make up the Delta Chapter of Kappa Eta Kappa."
 executive_board_lead = "The members guiding the chapter through the Fall 2026 semester"
 
 # Members left off this page only (matched on `name` in data/members.json).
