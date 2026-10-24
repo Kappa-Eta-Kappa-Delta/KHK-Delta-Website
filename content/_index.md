@@ -5,7 +5,7 @@ member_directory_url = "/members/"
 
 [hero]
 crest = "assets/svg/crest.svg"
-heading = "Welcome to KHK"
+heading = "Welcome to Rick Lamb's Demo Site!"
 subheading = "University of Wisconsin-Madison"
 lead = "A co-ed professional fraternity dedicated to fostering excellence in Engineering and Computer Science through professional development, community, and lifelong brotherhood."
 
