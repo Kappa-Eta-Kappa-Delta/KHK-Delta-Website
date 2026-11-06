@@ -145,7 +145,6 @@ body {
     &:hover {
         background: linear-gradient(135deg, #a01829 0%, #7a1220 100%);
         transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(196, 30, 58, 0.3);
     }
 }
 
@@ -289,7 +288,6 @@ body {
 
     &:hover {
         transform: translateY(-3px);
-        box-shadow: 0 10px 30px rgba(196, 30, 58, 0.3);
     }
 
     &.rush-jump-btn {
