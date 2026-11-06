@@ -161,12 +161,6 @@
 
 .event-date-card {
     border: 1px solid var(--border-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-    &:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 22px 42px var(--shadow-color);
-    }
 }
 
 .event-date {
@@ -412,11 +406,6 @@
         border-radius: 0 50px 50px 0;
         font-weight: 400;
         transition: all 0.3s ease;
-
-        &:hover {
-            transform: translateX(3px);
-            box-shadow: 0 5px 15px rgba(196, 30, 58, 0.3);
-        }
     }
 }
 

@@ -88,14 +88,6 @@
 .vision-section,
 .mission-section,
 .our-home-section {
-    img {
-        transition: transform 0.3s ease;
-
-        &:hover {
-            transform: scale(1.02);
-        }
-    }
-
     h2 {
         color: var(--primary-color);
         font-weight: 800;
@@ -167,11 +159,6 @@
     border: 1px solid var(--border-color);
     border-top: 4px solid var(--primary-color);
     transition: all 0.3s ease;
-
-    &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 40px var(--shadow-color);
-    }
 
     h3 {
         color: var(--primary-color);
@@ -360,11 +347,6 @@
     box-shadow: 0 5px 20px var(--shadow-color);
     padding: 1.5rem;
     transition: all 0.3s ease;
-
-    &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 40px var(--shadow-color);
-    }
 
     @media (min-width: 576px) {
         width: calc((100% - 1.5rem) / 2);
